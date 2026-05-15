@@ -34,3 +34,5 @@ sessions/
 logs/
 null
 .claude/
+__pycache__/
+*.pyc
