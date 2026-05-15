@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\emaza\OneDrive\Escritorio\CODEX\PRUEBA1\scripts\entity_normalizer.py", line 1245, in <module>
+    main()
+  File "C:\Users\emaza\OneDrive\Escritorio\CODEX\PRUEBA1\scripts\entity_normalizer.py", line 1201, in main
+    init_db(conn)
+  File "C:\Users\emaza\OneDrive\Escritorio\CODEX\PRUEBA1\scripts\entity_normalizer.py", line 642, in init_db
+    conn.executescript("""
+sqlite3.OperationalError: database is locked

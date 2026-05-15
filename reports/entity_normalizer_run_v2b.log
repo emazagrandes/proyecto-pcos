@@ -1,0 +1,2092 @@
+[INFO] DB tables ready (entity, article_entity_links, intervention_signals)
+[INFO] Seeded 59 canonical entities into DB
+[INFO] Extracted 1896 terms (1848 from trials, 48 from extractions)
+[INFO] Processing 1896 raw terms through layers 1-2...
+[INFO] Layer 1-2 results: 522 exact, 90 high-conf fuzzy, 680 low-conf fuzzy (need LLM), 123 noise, 481 unknown
+[INFO] Verifying 680 low-confidence fuzzy matches with LLM...
+[INFO]   REJECTED fuzzy: 'collection of menstrual blood' is NOT 'menstrual regularity'
+[INFO]   REJECTED fuzzy: 'nutritional and metabolic work-up' is NOT 'bariatric surgery'
+[INFO]   Fuzzy verify progress: 10 / 680
+[INFO]   REJECTED fuzzy: 'letrozole + gonadotropins' is NOT 'letrozole'
+[INFO]   REJECTED fuzzy: 'myo-inositol placebo' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'b complex plus vitamin c tablets' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'tirzepatide as an adjunct to lifestyle intervention' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 20 / 680
+[INFO]   REJECTED fuzzy: 'clinical hyperandrogenism assessment' is NOT 'pregnancy rate'
+[INFO]   REJECTED fuzzy: 'frequency of chronic vascular complications [n (%)]' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'time in hyperglycemia (hours)' is NOT 'ivm'
+[INFO]   Fuzzy verify progress: 30 / 680
+[INFO]   REJECTED fuzzy: 'female patients with pcos' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'cyproterone acetate' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'total body dual-energy x-ray absorptiometry' is NOT 'testosterone'
+[INFO]   REJECTED fuzzy: 'sibutramine' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 40 / 680
+[INFO]   REJECTED fuzzy: 'metformin and roflumilast' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'fish oil and metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'the chiglitazar group: lifestyle intervention+ metformin+ orlistat (obese patients)+ chiglitazar' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 50 / 680
+[INFO]   REJECTED fuzzy: 'control group without pcos' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'simvastatin and metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'determination of concentrations of androgens' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'heat therapy' is NOT 'cognitive behavioral therapy'
+[INFO]   Fuzzy verify progress: 60 / 680
+[INFO]   REJECTED fuzzy: 'progesterone in oil' is NOT 'omega-3'
+[INFO]   REJECTED fuzzy: 'measurement of bisphenol in urine' is NOT 'ivf'
+[INFO]   REJECTED fuzzy: 'fertility treatment' is NOT 'pregnancy rate'
+[INFO]   Fuzzy verify progress: 70 / 680
+[INFO]   REJECTED fuzzy: 'ethynyl-estradiol plus cyproterone acetate' is NOT 'gnrh agonists'
+[INFO]   REJECTED fuzzy: 'nmn intervention' is NOT 'cognitive behavioral therapy'
+[INFO]   REJECTED fuzzy: 'control diet' is NOT 'dietary intervention'
+[INFO]   REJECTED fuzzy: 'metformin-glp-1 receptor agonist' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'metformin-oral contraceptive(oc)' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 80 / 680
+[INFO]   REJECTED fuzzy: 'placebo liraglutide pen injector' is NOT 'liraglutide'
+[INFO]   REJECTED fuzzy: 'bicalutamide 50 mg' is NOT 'flutamide'
+[INFO]   REJECTED fuzzy: 'measurement of fasting tumor necrosis factor \u03b1 (tnf-\u03b1) concentration' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'measurement of interleukin-18 (il-18) concentration' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'measurement of interleukin-4 (il-4) concentration' is NOT 'quality of life'
+[INFO]   Fuzzy verify progress: 90 / 680
+[INFO]   REJECTED fuzzy: 'measurement of interleukin-6 (il-6) concentration in blood serum' is NOT 'ivf'
+[INFO]   REJECTED fuzzy: 'serum levels of lh, fsh, testosterone, prolactin, and ferritin' is NOT 'testosterone'
+[INFO]   REJECTED fuzzy: 'phentermine /topiramate (phen/ tpm) er' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 100 / 680
+[INFO]   REJECTED fuzzy: 'serum uc-oc' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'hepassocin' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'metformin and liraglutide' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'elix cycle balance' is NOT 'alpha-lipoic acid'
+[INFO]   REJECTED fuzzy: 'evaluation of the correlation of serum concentrations of selected inflammatory markers (leucocytosis, crp, il-1, il-6, il-10, tnf-alpha) with metabolic and hormonal parameters' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'measurement and comparison of leucocytosis and concentrations of c-reactive protein (crp), interleukin-1 (il-1), il-6, il-10, tumor necrosis factor (tnf-alpha) in pcos phenotypes a, b, c and d' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'estradiol patch' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 110 / 680
+[INFO]   REJECTED fuzzy: 'myo-inositol,alpha-lipoic acid and folic acid' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'subjects in the intervention group will receive one capsule containing 10 mg astaper day made by the "zyest technology tarawat zendig" institute in iran. the dosage of asx is determined based on the s' is NOT 'cognitive behavioral therapy'
+[INFO]   Fuzzy verify progress: 120 / 680
+[INFO]   REJECTED fuzzy: 'levothyroxine 25 mcg (0.025 mg) oral tablet' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'metformin and liraglutide' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 130 / 680
+[INFO]   REJECTED fuzzy: 'progesterone antagonist' is NOT 'gnrh antagonists'
+[INFO]   REJECTED fuzzy: 'liraglutide and metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'metoclopramide' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'information about clinical risk factors for endometrial cancer and endometrial hyperplasia (eh)' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'hormonal and biochemical blood tests and ultrasound scanning' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'spermiogram test' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 140 / 680
+[INFO]   Fuzzy verify progress: 150 / 680
+[INFO]   REJECTED fuzzy: 'magnetic resonance (mr) assessment of the abdomen' is NOT 'homa-ir'
+[INFO]   REJECTED fuzzy: 'mr assessment of whole body fat' is NOT 'bmi'
+[INFO]   REJECTED fuzzy: 'serum test' is NOT 'testosterone'
+[INFO]   REJECTED fuzzy: 'placebo ultrasound at acupuncture points' is NOT 'acupuncture'
+[INFO]   REJECTED fuzzy: 'metabolic response to protein source' is NOT 'bariatric surgery'
+[INFO]   Fuzzy verify progress: 160 / 680
+[INFO]   REJECTED fuzzy: 'no intervention (observational study)' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'olive oil capsules' is NOT 'omega-3'
+[INFO]   REJECTED fuzzy: 'cognitive outcomes outcome evaluation form' is NOT 'cognitive behavioral therapy'
+[INFO]   REJECTED fuzzy: 'survey on patient's perspectives on the development of an structured education programme for pcos' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'probiotic placebo' is NOT 'probiotics'
+[INFO]   Fuzzy verify progress: 170 / 680
+[INFO]   REJECTED fuzzy: 'measurement of fetuin-a level in serum' is NOT 'ivf'
+[INFO]   Fuzzy verify progress: 180 / 680
+[INFO]   REJECTED fuzzy: 'cc placebo' is NOT 'clomiphene citrate'
+[INFO]   REJECTED fuzzy: 'aromatase inhibitor (litrezole) plus ufsh arm' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 190 / 680
+[INFO]   REJECTED fuzzy: 'measurement of oxidative stress levels (malondialdehide, glutathione disulphate, total antioxidant capacity, superoxide dismutase and carbonylated proteins )' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'developmental score according to the ages & stages questionnaires®, third edition - asq®-3' is NOT 'hirsutism'
+[INFO]   REJECTED fuzzy: 'physical development and general health' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'glucocorticoid' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 200 / 680
+[INFO]   REJECTED fuzzy: 'placebo pills' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'normal ad libitum diet' is NOT 'dietary intervention'
+[INFO]   REJECTED fuzzy: 'furocyst' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'assessment of the severity of endogenetic alopecia using the visual ludwig scale' is NOT 'homa-ir'
+[INFO]   REJECTED fuzzy: 'assessment of the severity of hirsutism using the visual modified ferriman-gallwey scale' is NOT 'hirsutism'
+[INFO]   REJECTED fuzzy: 'metformin plus letrozole' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'treadmill' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 210 / 680
+[INFO]   REJECTED fuzzy: 'placebo caplet of metformin xr' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'placebo capsule of dlbs3233' is NOT 'quality of life'
+[INFO]   Fuzzy verify progress: 220 / 680
+[INFO]   REJECTED fuzzy: 'ketofol as induction agent' is NOT 'probiotics'
+[INFO]   REJECTED fuzzy: 'propofol as induction agent' is NOT 'probiotics'
+[INFO]   REJECTED fuzzy: 'a compound prescription of chinese medicine' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'mpa' is NOT 'sglt2 inhibitors'
+[INFO]   Fuzzy verify progress: 230 / 680
+[INFO]   REJECTED fuzzy: 'bromocriptine' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'measurement of ghrelin concentration' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'measurement of kisspeptin concentration' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'measurement of zonulin concentration' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: '6 weeks of dieting according to tüber nutrition recommendations' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'placebo metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'blood sample collection for scube-1 and scube-3 measurement' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 240 / 680
+[INFO]   REJECTED fuzzy: 'scaling and oral hygiene instruction' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 250 / 680
+[INFO]   REJECTED fuzzy: 'il-1 receptor antagonist anakinra' is NOT 'gnrh antagonists'
+[INFO]   REJECTED fuzzy: 'metabolomics' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: Expecting value: line 1 column 1 (char 0)
+[INFO]   REJECTED fuzzy: 'mirna' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin (1000 mg daily), pioglitazone (30 mg daily), acetyl-l-carnitine (3 gm daily)' is NOT 'pioglitazone'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin, pioglitazone and placebo' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomiphene citrate treatment' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'endobarrier treatment in pcos' is NOT 'ivm'
+[INFO]   Fuzzy verify progress: 260 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dapagliflozin/metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'group a 2.5 mg letrozole oral tablets' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ganirelix acetate' is NOT 'gnrh antagonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'methyl testosterone' is NOT 'testosterone'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'essential amino acid (eaa) supplement' is NOT 'salsalate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'estradiol valerate' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'anthropometric and physical examination' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'biochemical, hormonal and metabolic phenotyping' is NOT 'bariatric surgery'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'indirect calorimetry, accelerometer and seven-day dietary recall' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oral smear and feces specimen' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 270 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomiphene citrate with ethinyl esteradiol' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomiphene citrate with plasebo' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'placebo metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'myo-inositol + folic a.' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'myo-inositol + folic a. + \u03b1-lactalbumin' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: '14 weeks exercise training' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'walking & dietary modification' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'drospirenone ethinyl estradiol (20 microgram)' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'drospirenone ethinyl estradiol (30 microgram)' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'progestin-primed ovarian stimulation (ppos)' is NOT 'laparoscopic ovarian drilling'
+[INFO]   Fuzzy verify progress: 280 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'lc n-3 pufa (fish oil) supplement' is NOT 'omega-3'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oral androgen challenge with dehydroepiandrosterone (dhea)' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'minimal ovarian stimulation' is NOT 'laparoscopic ovarian drilling'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomiphene citrate +highly purified ufsh' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ovulatory agent' is NOT 'ovulation rate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'estradiol valerate' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'sequential clomiphene citrate and gonadotropin' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: '3 mg drsp/20 \u03bcg ee' is NOT 'omega-3'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metionac' is NOT 'n-acetyl cysteine'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'combination of treatments' is NOT 'quality of life'
+[INFO]   Fuzzy verify progress: 290 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'orlistat/meal replacement/lifestyle modification' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin and fshr' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ovarian drilling by fertiloscopy' is NOT 'laparoscopic ovarian drilling'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'diet and lifestyle program' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin plus clomiphene citrate' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'blood and endometrial tissue sampling' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'information about clinical risk factors for endometrial cancer and endometrial hyperplasia' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'caloric diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'caloric diet with metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin (glucophage)' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 300 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'standard care (diet and exercise only)' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'pioglitazone hydrochloride and metformin hydrochloride tablets' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'gnrh' is NOT 'gnrh agonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole tablets (femara; novartis pharma, switzerland)' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin hcl (cidophage®; cid,cairo, egypt)' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'vitamin d level assessment' is NOT 'vitamin d'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'vitamin d levels measurement using chemiluminescent assay' is NOT 'vitamin d'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin (1000 mg twice a day)' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'olive oil 5ml/5mg (bd) nutritional sachet 2100mg (bd)' is NOT 'omega-3'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'acupuncture+lifestyle intervention' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 310 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin+lifestyle intervention' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'adolescent pcos group receiving oral contraceptives' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'amh level difference between patient with pcos and multicystic ovaries.' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'gonadotropin dose increment timing' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomiphene citrate and human chorionic gonadotropin (hcg)' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'low calolric diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin + placebo' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ocp + metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ocp + placebo' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'physical exercise' is NOT 'exercise'
+[INFO]   Fuzzy verify progress: 320 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'aerobic exercise and added sugar elimination' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'low intensity steady state training' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'sitagliptin and metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'senobi exercises with aerobics exercises' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'combined metformin-cc' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'combined n-acetyl cysteine -cc' is NOT 'n-acetyl cysteine'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oc - drospirenone plus ethynylestradiol' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'physical exercise' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'vitamin, polyvitamins tablets' is NOT 'vitamin d'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'glucose' is NOT 'sglt2 inhibitors'
+[INFO]   Fuzzy verify progress: 330 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'lc n-3 pufa (fish oil) supplement' is NOT 'omega-3'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'cyproterone compound + spironolactone' is NOT 'spironolactone'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'bushen huatan decoction' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'cholecalciferol (vit d3)' is NOT 'vitamin d'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'canagliflozin combined with metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'cyproterone / ethinylestradiol (diane-35, bay86-5264) and its generics' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'assesment of iq: the stanford-binet v (stanford-binet intelligence scales):' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'serum total testosterone, serum androsterone, serum androstenedione and serum dehydroepiandrosterone sulfate' is NOT 'testosterone'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'sham-acupuncture group' is NOT 'acupuncture'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'supervised structured aerobic exercise training' is NOT 'exercise'
+[INFO]   Fuzzy verify progress: 340 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'folate plus metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'placebo plus metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ultrasound cavitation in addition to aerobic ex' is NOT 'ivf'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin 500 mg tablet' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'placebo (folic acid )' is NOT 'folic acid'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'standart diet therapy' is NOT 'ivf'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'gnrh antagonist + methyltestosterone 5 mg' is NOT 'gnrh antagonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'lifestyle counseling' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'vegan diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'basal antral follicle count' is NOT 'gonadotropins'
+[INFO]   Fuzzy verify progress: 350 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'follicular stimulating hormone' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'magnesium supplementation' is NOT 'chromium'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'fasting mimicking diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'byetta 5mcg pen injection' is NOT 'exenatide'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'interval training' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'comparison of laboratory test results in women in the 4 study arms' is NOT 'ivf'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'gonalef® (follitropin alfa)' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'purified pituitary gonadotropin (fertinorm-p®)' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'healthy lifestyle education' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'inositol + folic acid' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 360 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'placebo pills' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'vitamin d3 pills' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'myo-inositol plus folic acid' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'myo-inositol plus folic acid plus alpha-lactalbumin' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'the pregnancy rate at ivf / icsi cycles' is NOT 'pregnancy rate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomiphine citrate plus low dose ufsh' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'step-up hp u fsh' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'cardiac imaging to assess left ventricular volumes and function' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'leptin concentration in blood serum' is NOT 'ivf'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'omentin-1 concentration in blood serum' is NOT 'ivf'
+[INFO]   Fuzzy verify progress: 370 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'resistin concentration in blood serum' is NOT 'ivf'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'pulse-based diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'tlc diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'high-intensity exercise' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'moderate-intensity exercise' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole plus metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'depot lupron followed by estrogen plus placebo' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin cloridrate' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'cyproterone acetate/ethinyl estradiol combination' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'glucophage tablets and victoza' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 380 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'synbiotic supplement' is NOT 'probiotics'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'mri' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'd-chiro-inositol, manganese, folic acid, vit b12' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'folic acid, vit b12' is NOT 'folic acid'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'myo-inositol + folic acid' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin / placebo treatment for 4 months' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'diet restriction' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'exercise and diet restriction' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'sebum test' is NOT 'testosterone'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'lifestyle management program' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 390 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'quality of life questionnaire' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'hfsh-hp' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'hmg-hp' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'liraglutide for 26 weeks' is NOT 'liraglutide'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dapagliflozin/metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole 0.5mg' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'roflumilast' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'specific dietary intervention group' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin 1500 mg' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'myoinositol 1500 mg' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 400 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ivf/icsi' is NOT 'ivf'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'pcos-app' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'aerobic exercise training program' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'combined yoga and aerobic training program' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oocyte retrieval for ivm' is NOT 'ivm'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oral contraceptive pill pretreatment (marvelon)' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'graceful lifestyle changes' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole 2.5mg' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oral glucose tolerance test (ogtt)' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dietary restriction' is NOT 'dietary intervention'
+[INFO]   Fuzzy verify progress: 410 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin + myo-inositol + dietary restriction' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomiphene citrate, metformin, highly purified urinary fsh' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'medical nutrition therapy + metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ovage assessment' is NOT 'homa-ir'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'gastric emptying scintigraphy' is NOT 'bariatric surgery'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'energy and fat-reduced normal diet' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'low age diet with reduced energy and fat' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'amlodipine' is NOT 'laparoscopic ovarian drilling'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomifene citrate ( clomid 50 mg )' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'flax seed oil' is NOT 'omega-3'
+[INFO]   Fuzzy verify progress: 420 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dietary recommendations' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'hypocaloric hyperproteic diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'structured exercise training' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin, pioglitazone' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ultrasound and hysterosalpingography' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ovarian interstitial laser treatment' is NOT 'laparoscopic ovarian drilling'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ethinyl estradiol-cyprosterone acetate' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'high sodium diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'low-salt diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'gonadotropins releasing hormone antagonist' is NOT 'gonadotropins'
+[INFO]   Fuzzy verify progress: 430 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'serum samples will be collected. asprosin levels will be determined by biochemical analysis' is NOT 'testosterone'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'effects of aidiet intervention to improve diet quality, immuno-metabolic health in normal and overweight pcos girls' is NOT 'ivf'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'electro acupuncture in group b' is NOT 'acupuncture'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ultrasound cavitation in group a' is NOT 'ivm'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'progestin primed ovarian stimulation protocol' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'recombinant-fsh or recombinant-fsh + human menopausal gonadotropin' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'myo-inositol+l-tyrosine' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin with semaglutide' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dietary intervention (energy restricted dietary intervention)' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dietary intervention (time-restricted feeding model (16:8))' is NOT 'dietary intervention'
+[INFO]   Fuzzy verify progress: 440 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'estradiol valerate' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'sequential clomiphene citrate and gonadotropin' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'combination of metformin hydrochloride and mi/dci' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'mi/dci combination in 40:1 ratio' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'probiotic blend capsule' is NOT 'probiotics'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'cavitation us + metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'cinnamon supplementation' is NOT 'cinnamon'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ivf-fet (gnrh-antagonist - agonist trigger - frozen embryo transfer)' is NOT 'gnrh antagonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ivm-fresh (no gonadotropin + fresh embryo transfer)' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'hypo-caloric diet:' is NOT 'dietary intervention'
+[INFO]   Fuzzy verify progress: 450 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ketogenic mediterranean diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'moderate aerobic exercises' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'semaglutide injectable product (wegovy and/or ozempic)' is NOT 'semaglutide'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'sibutramine' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dydrogesterone 10 mg oral tablet' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'estradiol' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin (500 mg twice a day), pioglitazone (15 mg twice a day)' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'resveratrol (1000mg twice a day), myoinositol 1000mg (twice a day)' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole 2.5mg (femara; novartis pharma services, basel, switzerland)' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oral contraceptive plus metformin' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 460 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oral contraceptive plus spironolactone' is NOT 'spironolactone'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: '1. metformin tablets; 2. promets probiotics powder' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin tablets' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'promets probiotics powder' is NOT 'probiotics'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'contraceptive' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'vitamin e' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'lifestyle management' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ulod' is NOT 'laparoscopic ovarian drilling'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'folic acid (placebo comparator)' is NOT 'folic acid'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'inositol + alpha lipoic acid' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 470 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'serum uric acid level' is NOT 'folic acid'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'female sexual function index' is NOT 'bmi'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin, gonadotropins in step-down regimen' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'placebo, gonadotropins in step-up regimen' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'birth control plus brevail' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ivf antagonist protocol' is NOT 'ivf'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'cetrorelix drug' is NOT 'gnrh antagonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'blood test, ultrasound and egg retrieval' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'developmental score according to the ages & stages questionnaires®, third edition - asq®-3' is NOT 'hirsutism'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'physical development and general health' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 480 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'aerobic exercises with resistance training' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'fish oil and metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'set-diet plus clomiphene' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'structured exercise program plus hypocaloric diet' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'continuous aerobic exercise training' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'orlistat vs metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'laparoscopic adjustable gastric banding' is NOT 'bariatric surgery'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: '3 mg drospirenone and 20 µg ethinyl-estradiol' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: '3 mg drospirenone and 30 µg ethinyl-estradiol' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ovarian puncture' is NOT 'gonadotropins'
+[INFO]   Fuzzy verify progress: 490 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'control group: clomiphene citrate tablets and bushen culuan decoction placebo' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'experimental group: bushen culuan decoction and clomiphene citrate tablets placebo' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'myo-inositol and d-chiro-inositol (3.6:1)' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'myo-inositol and d-chiro-inositol (40:1)' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'two-dimensional and three-dimensional ultrasound of the female reproductive organ' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'patients (women of reproductive age suffering from non-alcoholic fatty liver with polycystic ovary syndrome) receiving 500 mg curcumin capsules (prepared from the extraction of turmeric in the laborat' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dietary advice plus liraglutide pen injector' is NOT 'liraglutide'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dietary advice plus myo-inositol and folic acid' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'sf-36 (short form health survey)' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'collection of serum and saliva samples' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 500 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'diane-35;metformin;clomiphene citrate; human menopausal gonadotropin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'blood urea and serum creatinine every month' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'body mass index (bmi) calculation' is NOT 'bmi'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'day 3: follicle stimulating hormone (fsh), luteinizing hormone (lh), thyroid stimulating hormone (tsh), total testosterone' is NOT 'testosterone'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'induction of ovulation using clomiphene citrate-pioglitazone-metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'induction of ovulation using letrozole-pioglitazone-metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'pretreatment blood urea and serum creatinine' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'serum estradiol (e2) on day 12' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'serum progesterone on day 21' is NOT 'testosterone'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'low calorie mediterranean ketogenic diet with phytoextracts (kemephy)' is NOT 'dietary intervention'
+[INFO]   Fuzzy verify progress: 510 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metfomin plus simvastatin' is NOT 'simvastatin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin plus placebo' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ultrasonography of the abdomen and pelvis' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'canagliflozin 100mg tab' is NOT 'sglt2 inhibitors'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'myo-inositol plus dioscorea villosa' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'rhizoma coptidis, radix astragali and flos lonicerae' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'rhizoma coptidis, radix astragali and flos lonicerae, ophiopogonis radix' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'protein restricted diet combined with vitamin d intervention' is NOT 'vitamin d'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oral isotretinoin' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'hcg hormone' is NOT 'hcg'
+[INFO]   Fuzzy verify progress: 520 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'bilateral laparoscopic drilling' is NOT 'laparoscopic ovarian drilling'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'unilateral laparoscopic drilling' is NOT 'laparoscopic ovarian drilling'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole -berberine' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'low-frequency electro-acupuncture (ea)' is NOT 'acupuncture'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'meeting a therapist - attention control' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dha levels of blood and cervical mucus' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'aerobic exercise in addition to metformin treatment' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'hydrocortisone' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomiphen citrate plus hmg' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'contraceptives, oral, combined' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 530 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dry eye diagnostic system of mediworks' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin plus spironolactone' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'isocaloric diet with 3 meals' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'isocaloric diet with 6 meals' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: '20 mcg ethinylestradiol /3 mg drospirenone' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: '20 mcg ethinylestradiol/3 mg drospirenone and selmevit' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: '30 mcg ethinylestradiol/3 mg drospirenone' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: '30 mcg ethinylestradiol/3 mg drospirenone and selmevit' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: '35 mcg ethinylestradiol/2 mg cyproterone' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: '35 mcg ethinylestradiol/2 mg cyproterone and selmevit' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 540 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oc:e-e-desogestrel/vaginal ring:e-e -ethonogestrel' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'the way of cumulus-oocyte complexes (coc) capa-ivm culture condition' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'vitamin d 4000iu daily' is NOT 'vitamin d'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'mri of liver' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'semi-controlled intervention with other animal proteins' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'semi-controlled nutritional intervention with fish protein diet' is NOT 'omega-3'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'saxagliptin-metformin xr' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'folic acid 400 mg' is NOT 'folic acid'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'cetrorelix 0.25mg' is NOT 'gnrh antagonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'estradiol valerate and progesterone' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 550 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'triptorelin 0.1 mg' is NOT 'gnrh agonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'rfsh' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'mediterranean diet restricted calorie' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'digital intervention' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'hydrocortisone' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'combination of a plant extract (bsl_ep044) and lactobacillus bsl_ps6' is NOT 'probiotics'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'periodontal status of female patients with pcos (newly diagnosed) of adolescent age group will be assessed' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'periodontal status of female patients with pcos (newly diagnosed) of adult age group will be assessed' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ethinylestradiol and cyproterone acetate' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'nutrition education, dietary counseling, and cooking' is NOT 'dietary intervention'
+[INFO]   Fuzzy verify progress: 560 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ethinyl estradiol and cyproterone acetate' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'combined oral contraceptive (ethinylestradiol 0.03 mg + drospirenone 3 mg)' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'inositol mid-level volume' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'long-acting triptorelin' is NOT 'gnrh agonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'short-acting triptorelin' is NOT 'gnrh agonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'fertilomed diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'meddiet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'exercise plus limiitng diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'limiting diet' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'estradiol valerate' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 570 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'intensive dietary intervention' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole 2.5mg' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole tablets' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oral metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin 1500mgs per day' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oral contraceptive pill combination of ethyl estradiol and cyproterone acetate' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'assessment of the impact of imbalance between anti- and pro-inflammatory factors in women with different pcos and hpod phenotypes on ovarian reserve indices' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'evaluation of the impact of subclinical hypothyroidism, with present/ absent antithyroid antibodies, on the balance between anti- and pro-inflammatory factors in women in both study arms' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'measurement and comparison of leucocytosis and concentrations of crp, procalcitonin, fibrinogen, ferritin, il-1, il-6, il-10, tnf-alpha in both study arms' is NOT 'ivf'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'acupuncture protocol 1' is NOT 'acupuncture'
+[INFO]   Fuzzy verify progress: 580 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'acupuncture protocol 2' is NOT 'acupuncture'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'female hormone balance supplement' is NOT 'amh'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole-metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole-metformin-pioglitazone' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'conventional controlled ovarian stimulation proctol' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dietary inflammatory index' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'hormone profile' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'take the patient's subcutaneous fat tissue to detect the expression of lnk' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'diet limitation' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'exercise and limiting diet' is NOT 'dietary intervention'
+[INFO]   Fuzzy verify progress: 590 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'serum and salivary samples will be collected. asprosin levels will be determined by biochemical analysis' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dietary group' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'in vitro maturation and in vitro fertilization' is NOT 'ivf'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'low doses of gonadotropin stimulation.' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'fourier transform ion cyclotron resonance mass spectrometry' is NOT 'bmi'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'detect the immune function of peripheral blood samples' is NOT 'quality of life'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'controlled ovarian stimulation by combined clomiphene citrate and ubiquinol versus hmg' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'in vitro matuartion of oocytes' is NOT 'ivm'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dydrogesterone tablets, norethisterone acetate, ethinyl estradiol, drospirenone and ethinyl estradiol' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole oral tablet' is NOT 'letrozole'
+[INFO]   Fuzzy verify progress: 600 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'ovidrel 250 mcg per 0.5 ml prefilled syringe' is NOT 'hcg'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomiphene citrate and letrozole' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'placebo oral tablet with calcium and clomiphene citrate' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'vitamin d with calcium and clomiphene citrate' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'calorie restricted diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dietary and life style modification and probiotic sanprobi super formula' is NOT 'probiotics'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'pulse-based diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'tlc diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'low glycemic index-high fiber' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomiphene citrate and folic acid' is NOT 'clomiphene citrate'
+[INFO]   Fuzzy verify progress: 610 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomiphene citrate and prednisolone' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'cyproterone acetate + estradiol' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'levonorgestrel, ethinyl estradiol 0.1-0.02mg oral tablet' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'higher protein dietary pattern' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'in vitro maturation of oocytes' is NOT 'ivm'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oxytocin' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole (femara; novartis pharma ag, basle, switzerland)' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clinical, biophysical and biochemical assessment of young females with clinical hyperandrogenism' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'conventional capa-ivm' is NOT 'ivm'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'super-gdf9 supplementation during capa-ivm' is NOT 'ivm'
+[INFO]   Fuzzy verify progress: 620 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'semaglutide injectable product' is NOT 'semaglutide'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'letrozole 2.5mg' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'laparoscopic ovarian diathermy (lod)' is NOT 'laparoscopic ovarian drilling'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin hcl (cidophage®; cid,cairo, egypt), cc (clomid®; global napi pharmaceuticals,cairo, egypt),cairo, egypt)' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin intervention' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin 500mg' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'sitagliptin/metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'collect body fluids/tissues & med history' is NOT 'bmi'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'conventional gnrh agonist (triptorelin)' is NOT 'gnrh agonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'gnrh antagonist (cetrorelix)' is NOT 'gnrh antagonists'
+[INFO]   Fuzzy verify progress: 630 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'active acupuncture' is NOT 'acupuncture'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'lifestyle management' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin, exenatide or combined (metformin & exenatide )' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'laparoscopic ovarian diathermy' is NOT 'laparoscopic ovarian drilling'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'drospirenone ethinyl estradiol myo-inositol' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'placebo letrozole' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'combi' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'met' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'controlled ovarian hyperstimulation for ivf with a long agonist protocol' is NOT 'liraglutide'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'controlled ovarian hyperstimulation for ivf with an antagonist protocol' is NOT 'gonadotropins'
+[INFO]   Fuzzy verify progress: 640 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oral carnitine supplementation' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'diet restriction' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'diet restriction and exercise' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'repeated dose of gnrh agonist' is NOT 'gnrh agonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'cetrorelix acetate' is NOT 'gnrh antagonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'life style intervention (dietician+ physiotherapist)' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'treadmill exercise' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin 1500 mg daily' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'fertybiotic woman plus' is NOT 'myo-inositol'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'follitropin alpha' is NOT 'gonadotropins'
+[INFO]   Fuzzy verify progress: 650 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'urinary hcg (u-hcg)' is NOT 'hcg'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'serum' is NOT 'testosterone'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'laser acupuncture' is NOT 'acupuncture'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'injection of cetrorelix' is NOT 'gnrh antagonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'oral insertion of dydrogeserone' is NOT 'oral contraceptives'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin, ethinylestradiol 30µg-drospirenone' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'pufa' is NOT 'omega-3'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'clomiphene citrate, metformin, metformin plus clomiphene citrate, gonadotropins' is NOT 'clomiphene citrate'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'bicalutamide 50 mg' is NOT 'flutamide'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'working to optimize wellness in tees with pcos (wow)' is NOT 'ivf'
+[INFO]   Fuzzy verify progress: 660 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'combination of hict and if' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'high intensity circuit training (hict)' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'depot leuprolide plus estrogen/progestin replacement' is NOT 'gnrh agonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'laparoscopic argon plasma treatment of endometrioma' is NOT 'laparoscopic ovarian drilling'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'laparoscopic stripping of endometrioma and suture/coagulation of the rest of ovary' is NOT 'laparoscopic ovarian drilling'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'periodized resistance training' is NOT 'exercise'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'human recombined insulin' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'american diabetes association diet' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'paleolithic diet' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'acupuncture+usual care' is NOT 'acupuncture'
+[INFO]   Fuzzy verify progress: 670 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'liraglutide + metformin' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'metformin + clomiphene' is NOT 'metformin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'gnrh a' is NOT 'gnrh agonists'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'no hormone' is NOT 'gonadotropins'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'dietary restriction' is NOT 'dietary intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'electrocoagulation and suture' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'the absorbable hemostat and suture' is NOT 'lifestyle intervention'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'simvastatin and micronized trans-resveratrol' is NOT 'simvastatin'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'extended letrozole therapy' is NOT 'letrozole'
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'traditional letrozole therapy' is NOT 'letrozole'
+[INFO]   Fuzzy verify progress: 680 / 680
+[INFO] Fuzzy verification: 162 confirmed, 518 rejected (moved to unknowns)
+[INFO] Running LLM resolution on 999 unknown terms...
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 10 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 20 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 30 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 40 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 50 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 60 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 70 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 80 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 90 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 100 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 110 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 120 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 130 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 140 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 150 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 160 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 170 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 180 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 190 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 200 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 210 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 220 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 230 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 240 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 250 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 260 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 270 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 280 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 290 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 300 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 310 / 999
+[INFO]   LLM progress: 320 / 999
+[INFO]   LLM progress: 330 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 340 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 350 / 999
+[INFO]   LLM progress: 360 / 999
+[INFO]   LLM progress: 370 / 999
+[INFO]   LLM progress: 380 / 999
+[INFO]   LLM progress: 390 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 400 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 410 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 420 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 430 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 440 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 450 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 460 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 470 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 480 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 490 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 500 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 510 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 520 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 530 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 540 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 550 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 560 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 570 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 580 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 590 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 600 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 610 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 620 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 630 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 640 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 650 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 660 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 670 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 680 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 690 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 700 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 710 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 720 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 730 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 740 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 750 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 760 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 770 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 780 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 790 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 800 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 810 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 820 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 830 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 840 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 850 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 860 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 870 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 880 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 890 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 900 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 910 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 920 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 930 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 940 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 950 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 960 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 970 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 980 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   LLM progress: 990 / 999
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO] Layer 3 results: 4 matched by LLM, 995 truly new
+[INFO] Computing intervention signals...
+[INFO] Top intervention signals (>= 2 studies):
+[INFO]   Entity                          studies  fav  consistency  weighted
+[INFO]   ---------------------------------------------------------------------------
+[INFO]   lifestyle intervention             40    12       0.706    11.647
+[INFO]   metformin                         173     3       0.273     2.972
+[INFO]   acupuncture                        17     1       1.000     0.971
+[INFO]   exercise                           27     1       0.500     0.956
+[INFO]   letrozole                          39     0       0.000     0.000
+[INFO]   clomiphene citrate                 57     0       0.000     0.000
+[INFO]   spironolactone                      6     0       0.000     0.000
+[INFO]   oral contraceptives                33     0       0.000     0.000
+[INFO]   flutamide                           6     0       0.000     0.000
+[INFO]   liraglutide                         7     0       0.000     0.000
+[INFO]   semaglutide                         3     0       0.000     0.000
+[INFO]   exenatide                           5     0       0.000     0.000
+[INFO]   glp-1 receptor agonists             5     0       0.000     0.000
+[INFO]   sglt2 inhibitors                   11     0       0.000     0.000
+[INFO]   pioglitazone                        9     0       0.000     0.000
+[INFO]   rosiglitazone                       2     0       0.000     0.000
+[INFO]   gonadotropins                      28     0       0.000     0.000
+[INFO]   hcg                                18     0       0.000     0.000
+[INFO]   gnrh agonists                      14     0       0.000     0.000
+[INFO]   gnrh antagonists                   15     0       0.000     0.000
+[INFO] ============================================================
+[INFO] ENTITY NORMALIZER COMPLETE
+[INFO]   Total terms processed:    1896
+[INFO]   Exact matches:            522
+[INFO]   Fuzzy (high conf):        90
+[INFO]   Fuzzy verified by LLM:    162
+[INFO]   Fuzzy rejected by LLM:    518
+[INFO]   LLM matches (unknowns):   4
+[INFO]   Noise filtered:           123
+[INFO]   New/unknown entities:     995
+[INFO]   Entities in DB:        978
+[INFO]   Article-entity links:  1716
+[INFO] ============================================================

@@ -1,0 +1,366 @@
+[INFO] DB tables ready (entity, article_entity_links, intervention_signals)
+[INFO] Seeded 59 canonical entities into DB
+[INFO] Extracted 1896 terms (1848 from trials, 48 from extractions)
+[INFO] Processing 1896 raw terms through layers 1-2...
+[INFO] Layer 1-2 results: 522 exact, 90 high-conf fuzzy, 680 low-conf fuzzy (need LLM), 123 noise, 481 unknown
+[INFO] Verifying 680 low-confidence fuzzy matches with LLM...
+[INFO]   REJECTED fuzzy: 'collection of menstrual blood' is NOT 'menstrual regularity'
+[INFO]   REJECTED fuzzy: 'nutritional and metabolic work-up' is NOT 'bariatric surgery'
+[INFO]   Fuzzy verify progress: 10 / 680
+[INFO]   REJECTED fuzzy: 'letrozole + gonadotropins' is NOT 'letrozole'
+[INFO]   REJECTED fuzzy: 'myo-inositol placebo' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'b complex plus vitamin c tablets' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'tirzepatide as an adjunct to lifestyle intervention' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 20 / 680
+[INFO]   REJECTED fuzzy: 'clinical hyperandrogenism assessment' is NOT 'pregnancy rate'
+[INFO]   REJECTED fuzzy: 'frequency of chronic vascular complications [n (%)]' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'time in hyperglycemia (hours)' is NOT 'ivm'
+[INFO]   Fuzzy verify progress: 30 / 680
+[INFO]   REJECTED fuzzy: 'female patients with pcos' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'cyproterone acetate' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'total body dual-energy x-ray absorptiometry' is NOT 'testosterone'
+[INFO]   REJECTED fuzzy: 'sibutramine' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 40 / 680
+[INFO]   REJECTED fuzzy: 'metformin and roflumilast' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'fish oil and metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'the chiglitazar group: lifestyle intervention+ metformin+ orlistat (obese patients)+ chiglitazar' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 50 / 680
+[INFO]   REJECTED fuzzy: 'control group without pcos' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'simvastatin and metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'determination of concentrations of androgens' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'heat therapy' is NOT 'cognitive behavioral therapy'
+[INFO]   Fuzzy verify progress: 60 / 680
+[INFO]   REJECTED fuzzy: 'progesterone in oil' is NOT 'omega-3'
+[INFO]   REJECTED fuzzy: 'measurement of bisphenol in urine' is NOT 'ivf'
+[INFO]   REJECTED fuzzy: 'fertility treatment' is NOT 'pregnancy rate'
+[INFO]   Fuzzy verify progress: 70 / 680
+[INFO]   REJECTED fuzzy: 'ethynyl-estradiol plus cyproterone acetate' is NOT 'gnrh agonists'
+[INFO]   REJECTED fuzzy: 'nmn intervention' is NOT 'cognitive behavioral therapy'
+[INFO]   REJECTED fuzzy: 'control diet' is NOT 'dietary intervention'
+[INFO]   REJECTED fuzzy: 'metformin-glp-1 receptor agonist' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'metformin-oral contraceptive(oc)' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 80 / 680
+[INFO]   REJECTED fuzzy: 'placebo liraglutide pen injector' is NOT 'liraglutide'
+[INFO]   REJECTED fuzzy: 'bicalutamide 50 mg' is NOT 'flutamide'
+[INFO]   REJECTED fuzzy: 'measurement of fasting tumor necrosis factor \u03b1 (tnf-\u03b1) concentration' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'measurement of interleukin-18 (il-18) concentration' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'measurement of interleukin-4 (il-4) concentration' is NOT 'quality of life'
+[INFO]   Fuzzy verify progress: 90 / 680
+[INFO]   REJECTED fuzzy: 'measurement of interleukin-6 (il-6) concentration in blood serum' is NOT 'ivf'
+[INFO]   REJECTED fuzzy: 'serum levels of lh, fsh, testosterone, prolactin, and ferritin' is NOT 'testosterone'
+[INFO]   REJECTED fuzzy: 'phentermine /topiramate (phen/ tpm) er' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 100 / 680
+[INFO]   REJECTED fuzzy: 'metformin and liraglutide' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'elix cycle balance' is NOT 'alpha-lipoic acid'
+[INFO]   REJECTED fuzzy: 'evaluation of the correlation of serum concentrations of selected inflammatory markers (leucocytosis, crp, il-1, il-6, il-10, tnf-alpha) with metabolic and hormonal parameters' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'measurement and comparison of leucocytosis and concentrations of c-reactive protein (crp), interleukin-1 (il-1), il-6, il-10, tumor necrosis factor (tnf-alpha) in pcos phenotypes a, b, c and d' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'estradiol patch' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 110 / 680
+[WARNING] Ollama call failed: 502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat
+[INFO]   REJECTED fuzzy: 'normal protein diet' is NOT 'dietary intervention'
+[INFO]   REJECTED fuzzy: 'subjects in the intervention group will receive one capsule containing 10 mg astaper day made by the "zyest technology tarawat zendig" institute in iran. the dosage of asx is determined based on the s' is NOT 'cognitive behavioral therapy'
+[INFO]   Fuzzy verify progress: 120 / 680
+[INFO]   REJECTED fuzzy: 'levothyroxine 25 mcg (0.025 mg) oral tablet' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'metformin and liraglutide' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 130 / 680
+[INFO]   REJECTED fuzzy: 'progesterone antagonist' is NOT 'gnrh antagonists'
+[INFO]   REJECTED fuzzy: 'liraglutide and metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'metoclopramide' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'information about clinical risk factors for endometrial cancer and endometrial hyperplasia (eh)' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'hormonal and biochemical blood tests and ultrasound scanning' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'spermiogram test' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 140 / 680
+[INFO]   Fuzzy verify progress: 150 / 680
+[INFO]   REJECTED fuzzy: 'magnetic resonance (mr) assessment of the abdomen' is NOT 'homa-ir'
+[INFO]   REJECTED fuzzy: 'mr assessment of whole body fat' is NOT 'bmi'
+[INFO]   REJECTED fuzzy: 'serum test' is NOT 'testosterone'
+[INFO]   REJECTED fuzzy: 'placebo ultrasound at acupuncture points' is NOT 'acupuncture'
+[INFO]   REJECTED fuzzy: 'metabolic response to protein source' is NOT 'bariatric surgery'
+[INFO]   Fuzzy verify progress: 160 / 680
+[INFO]   REJECTED fuzzy: 'no intervention (observational study)' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'olive oil capsules' is NOT 'omega-3'
+[INFO]   REJECTED fuzzy: 'cognitive outcomes outcome evaluation form' is NOT 'cognitive behavioral therapy'
+[INFO]   REJECTED fuzzy: 'survey on patient's perspectives on the development of an structured education programme for pcos' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'probiotic placebo' is NOT 'probiotics'
+[INFO]   Fuzzy verify progress: 170 / 680
+[INFO]   REJECTED fuzzy: 'measurement of fetuin-a level in serum' is NOT 'ivf'
+[INFO]   Fuzzy verify progress: 180 / 680
+[INFO]   REJECTED fuzzy: 'cc placebo' is NOT 'clomiphene citrate'
+[INFO]   REJECTED fuzzy: 'aromatase inhibitor (litrezole) plus ufsh arm' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 190 / 680
+[INFO]   REJECTED fuzzy: 'measurement of oxidative stress levels (malondialdehide, glutathione disulphate, total antioxidant capacity, superoxide dismutase and carbonylated proteins )' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'developmental score according to the ages & stages questionnaires®, third edition - asq®-3' is NOT 'hirsutism'
+[INFO]   REJECTED fuzzy: 'physical development and general health' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'glucocorticoid' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 200 / 680
+[INFO]   REJECTED fuzzy: 'placebo pills' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'normal ad libitum diet' is NOT 'dietary intervention'
+[INFO]   REJECTED fuzzy: 'furocyst' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'assessment of the severity of endogenetic alopecia using the visual ludwig scale' is NOT 'homa-ir'
+[INFO]   REJECTED fuzzy: 'assessment of the severity of hirsutism using the visual modified ferriman-gallwey scale' is NOT 'hirsutism'
+[INFO]   REJECTED fuzzy: 'metformin plus letrozole' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'treadmill' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 210 / 680
+[INFO]   REJECTED fuzzy: 'placebo caplet of metformin xr' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'placebo capsule of dlbs3233' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'metformin plus yasmin' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 220 / 680
+[INFO]   REJECTED fuzzy: 'ketofol as induction agent' is NOT 'probiotics'
+[INFO]   REJECTED fuzzy: 'propofol as induction agent' is NOT 'probiotics'
+[INFO]   REJECTED fuzzy: 'a compound prescription of chinese medicine' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'mpa' is NOT 'sglt2 inhibitors'
+[INFO]   Fuzzy verify progress: 230 / 680
+[INFO]   REJECTED fuzzy: 'bromocriptine' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'measurement of ghrelin concentration' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'measurement of kisspeptin concentration' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'measurement of zonulin concentration' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: '6 weeks of dieting according to tüber nutrition recommendations' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'placebo metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'blood sample collection for scube-1 and scube-3 measurement' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 240 / 680
+[INFO]   REJECTED fuzzy: 'scaling and oral hygiene instruction' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 250 / 680
+[INFO]   REJECTED fuzzy: 'il-1 receptor antagonist anakinra' is NOT 'gnrh antagonists'
+[INFO]   REJECTED fuzzy: 'metabolomics' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'mirna' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'metformin (1000 mg daily), pioglitazone (30 mg daily), acetyl-l-carnitine (3 gm daily)' is NOT 'pioglitazone'
+[INFO]   REJECTED fuzzy: 'endobarrier treatment in pcos' is NOT 'ivm'
+[INFO]   Fuzzy verify progress: 260 / 680
+[INFO]   REJECTED fuzzy: 'essential amino acid (eaa) supplement' is NOT 'salsalate'
+[INFO]   REJECTED fuzzy: 'estradiol valerate' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'anthropometric and physical examination' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'biochemical, hormonal and metabolic phenotyping' is NOT 'bariatric surgery'
+[INFO]   REJECTED fuzzy: 'indirect calorimetry, accelerometer and seven-day dietary recall' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'oral smear and feces specimen' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 270 / 680
+[INFO]   REJECTED fuzzy: 'placebo metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'progestin-primed ovarian stimulation (ppos)' is NOT 'laparoscopic ovarian drilling'
+[INFO]   Fuzzy verify progress: 280 / 680
+[INFO]   REJECTED fuzzy: 'oral androgen challenge with dehydroepiandrosterone (dhea)' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'minimal ovarian stimulation' is NOT 'laparoscopic ovarian drilling'
+[INFO]   REJECTED fuzzy: 'ovulatory agent' is NOT 'ovulation rate'
+[INFO]   REJECTED fuzzy: 'estradiol valerate' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: '3 mg drsp/20 \u03bcg ee' is NOT 'omega-3'
+[INFO]   REJECTED fuzzy: 'metionac' is NOT 'n-acetyl cysteine'
+[INFO]   REJECTED fuzzy: 'combination of treatments' is NOT 'quality of life'
+[INFO]   Fuzzy verify progress: 290 / 680
+[INFO]   REJECTED fuzzy: 'metformin and fshr' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'metformin plus clomiphene citrate' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'blood and endometrial tissue sampling' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'information about clinical risk factors for endometrial cancer and endometrial hyperplasia' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 300 / 680
+[INFO]   REJECTED fuzzy: 'vitamin d level assessment' is NOT 'vitamin d'
+[INFO]   REJECTED fuzzy: 'vitamin d levels measurement using chemiluminescent assay' is NOT 'vitamin d'
+[INFO]   REJECTED fuzzy: 'olive oil 5ml/5mg (bd) nutritional sachet 2100mg (bd)' is NOT 'omega-3'
+[INFO]   Fuzzy verify progress: 310 / 680
+[INFO]   REJECTED fuzzy: 'metformin+lifestyle intervention' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'amh level difference between patient with pcos and multicystic ovaries.' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 320 / 680
+[INFO]   REJECTED fuzzy: 'low intensity steady state training' is NOT 'dietary intervention'
+[INFO]   REJECTED fuzzy: 'combined metformin-cc' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'vitamin, polyvitamins tablets' is NOT 'vitamin d'
+[INFO]   REJECTED fuzzy: 'glucose' is NOT 'sglt2 inhibitors'
+[INFO]   Fuzzy verify progress: 330 / 680
+[INFO]   REJECTED fuzzy: 'bushen huatan decoction' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'assesment of iq: the stanford-binet v (stanford-binet intelligence scales):' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'sham-acupuncture group' is NOT 'acupuncture'
+[INFO]   Fuzzy verify progress: 340 / 680
+[INFO]   REJECTED fuzzy: 'ultrasound cavitation in addition to aerobic ex' is NOT 'ivf'
+[INFO]   REJECTED fuzzy: 'placebo (folic acid )' is NOT 'folic acid'
+[INFO]   REJECTED fuzzy: 'standart diet therapy' is NOT 'ivf'
+[INFO]   REJECTED fuzzy: 'basal antral follicle count' is NOT 'gonadotropins'
+[INFO]   Fuzzy verify progress: 350 / 680
+[INFO]   REJECTED fuzzy: 'magnesium supplementation' is NOT 'chromium'
+[INFO]   REJECTED fuzzy: 'comparison of laboratory test results in women in the 4 study arms' is NOT 'ivf'
+[INFO]   Fuzzy verify progress: 360 / 680
+[INFO]   REJECTED fuzzy: 'placebo pills' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'vitamin d3 pills' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'cardiac imaging to assess left ventricular volumes and function' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'leptin concentration in blood serum' is NOT 'ivf'
+[INFO]   REJECTED fuzzy: 'omentin-1 concentration in blood serum' is NOT 'ivf'
+[INFO]   Fuzzy verify progress: 370 / 680
+[INFO]   REJECTED fuzzy: 'resistin concentration in blood serum' is NOT 'ivf'
+[INFO]   REJECTED fuzzy: 'letrozole plus metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'depot lupron followed by estrogen plus placebo' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 380 / 680
+[INFO]   REJECTED fuzzy: 'mri' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'sebum test' is NOT 'testosterone'
+[INFO]   Fuzzy verify progress: 390 / 680
+[INFO]   REJECTED fuzzy: 'roflumilast' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 400 / 680
+[INFO]   REJECTED fuzzy: 'pcos-app' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'combined yoga and aerobic training program' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'oral glucose tolerance test (ogtt)' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 410 / 680
+[INFO]   REJECTED fuzzy: 'metformin + myo-inositol + dietary restriction' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'clomiphene citrate, metformin, highly purified urinary fsh' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'ovage assessment' is NOT 'homa-ir'
+[INFO]   REJECTED fuzzy: 'gastric emptying scintigraphy' is NOT 'bariatric surgery'
+[INFO]   REJECTED fuzzy: 'amlodipine' is NOT 'laparoscopic ovarian drilling'
+[INFO]   Fuzzy verify progress: 420 / 680
+[INFO]   REJECTED fuzzy: 'metformin, pioglitazone' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'ultrasound and hysterosalpingography' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'gonadotropins releasing hormone antagonist' is NOT 'gonadotropins'
+[INFO]   Fuzzy verify progress: 430 / 680
+[INFO]   REJECTED fuzzy: 'serum samples will be collected. asprosin levels will be determined by biochemical analysis' is NOT 'testosterone'
+[INFO]   REJECTED fuzzy: 'effects of aidiet intervention to improve diet quality, immuno-metabolic health in normal and overweight pcos girls' is NOT 'ivf'
+[INFO]   REJECTED fuzzy: 'ultrasound cavitation in group a' is NOT 'ivm'
+[INFO]   REJECTED fuzzy: 'metformin with semaglutide' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 440 / 680
+[INFO]   REJECTED fuzzy: 'estradiol valerate' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'ivm-fresh (no gonadotropin + fresh embryo transfer)' is NOT 'gonadotropins'
+[INFO]   Fuzzy verify progress: 450 / 680
+[INFO]   REJECTED fuzzy: 'sibutramine' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'dydrogesterone 10 mg oral tablet' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'estradiol' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'metformin (500 mg twice a day), pioglitazone (15 mg twice a day)' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 460 / 680
+[INFO]   REJECTED fuzzy: 'vitamin e' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'folic acid (placebo comparator)' is NOT 'folic acid'
+[INFO]   Fuzzy verify progress: 470 / 680
+[INFO]   REJECTED fuzzy: 'serum uric acid level' is NOT 'folic acid'
+[INFO]   REJECTED fuzzy: 'female sexual function index' is NOT 'bmi'
+[INFO]   REJECTED fuzzy: 'birth control plus brevail' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'blood test, ultrasound and egg retrieval' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'developmental score according to the ages & stages questionnaires®, third edition - asq®-3' is NOT 'hirsutism'
+[INFO]   REJECTED fuzzy: 'physical development and general health' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 480 / 680
+[INFO]   REJECTED fuzzy: 'orlistat vs metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'ovarian puncture' is NOT 'gonadotropins'
+[INFO]   Fuzzy verify progress: 490 / 680
+[INFO]   REJECTED fuzzy: 'two-dimensional and three-dimensional ultrasound of the female reproductive organ' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'patients (women of reproductive age suffering from non-alcoholic fatty liver with polycystic ovary syndrome) receiving 500 mg curcumin capsules (prepared from the extraction of turmeric in the laborat' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'collection of serum and saliva samples' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 500 / 680
+[INFO]   REJECTED fuzzy: 'diane-35;metformin;clomiphene citrate; human menopausal gonadotropin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'blood urea and serum creatinine every month' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'body mass index (bmi) calculation' is NOT 'bmi'
+[INFO]   REJECTED fuzzy: 'induction of ovulation using clomiphene citrate-pioglitazone-metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'induction of ovulation using letrozole-pioglitazone-metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'pretreatment blood urea and serum creatinine' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'serum estradiol (e2) on day 12' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'serum progesterone on day 21' is NOT 'testosterone'
+[INFO]   Fuzzy verify progress: 510 / 680
+[INFO]   REJECTED fuzzy: 'metfomin plus simvastatin' is NOT 'simvastatin'
+[INFO]   REJECTED fuzzy: 'ultrasonography of the abdomen and pelvis' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'rhizoma coptidis, radix astragali and flos lonicerae' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'rhizoma coptidis, radix astragali and flos lonicerae, ophiopogonis radix' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'oral isotretinoin' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 520 / 680
+[INFO]   REJECTED fuzzy: 'meeting a therapist - attention control' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'dha levels of blood and cervical mucus' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'hydrocortisone' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 530 / 680
+[INFO]   REJECTED fuzzy: 'dry eye diagnostic system of mediworks' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'metformin plus spironolactone' is NOT 'metformin'
+[INFO]   Fuzzy verify progress: 540 / 680
+[INFO]   REJECTED fuzzy: 'the way of cumulus-oocyte complexes (coc) capa-ivm culture condition' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'mri of liver' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'semi-controlled nutritional intervention with fish protein diet' is NOT 'omega-3'
+[INFO]   Fuzzy verify progress: 550 / 680
+[INFO]   REJECTED fuzzy: 'digital intervention' is NOT 'dietary intervention'
+[INFO]   REJECTED fuzzy: 'hydrocortisone' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'periodontal status of female patients with pcos (newly diagnosed) of adolescent age group will be assessed' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'periodontal status of female patients with pcos (newly diagnosed) of adult age group will be assessed' is NOT 'quality of life'
+[INFO]   Fuzzy verify progress: 560 / 680
+[INFO]   REJECTED fuzzy: 'limiting diet' is NOT 'myo-inositol'
+[INFO]   REJECTED fuzzy: 'estradiol valerate' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 570 / 680
+[INFO]   REJECTED fuzzy: 'assessment of the impact of imbalance between anti- and pro-inflammatory factors in women with different pcos and hpod phenotypes on ovarian reserve indices' is NOT 'gonadotropins'
+[INFO]   REJECTED fuzzy: 'evaluation of the impact of subclinical hypothyroidism, with present/ absent antithyroid antibodies, on the balance between anti- and pro-inflammatory factors in women in both study arms' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'measurement and comparison of leucocytosis and concentrations of crp, procalcitonin, fibrinogen, ferritin, il-1, il-6, il-10, tnf-alpha in both study arms' is NOT 'ivf'
+[INFO]   Fuzzy verify progress: 580 / 680
+[INFO]   REJECTED fuzzy: 'female hormone balance supplement' is NOT 'amh'
+[INFO]   REJECTED fuzzy: 'letrozole-metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'letrozole-metformin-pioglitazone' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'dietary inflammatory index' is NOT 'dietary intervention'
+[INFO]   REJECTED fuzzy: 'hormone profile' is NOT 'gonadotropins'
+[INFO]   REJECTED fuzzy: 'take the patient's subcutaneous fat tissue to detect the expression of lnk' is NOT 'quality of life'
+[INFO]   REJECTED fuzzy: 'diet limitation' is NOT 'myo-inositol'
+[INFO]   Fuzzy verify progress: 590 / 680
+[INFO]   REJECTED fuzzy: 'serum and salivary samples will be collected. asprosin levels will be determined by biochemical analysis' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'low doses of gonadotropin stimulation.' is NOT 'dietary intervention'
+[INFO]   REJECTED fuzzy: 'fourier transform ion cyclotron resonance mass spectrometry' is NOT 'bmi'
+[INFO]   REJECTED fuzzy: 'detect the immune function of peripheral blood samples' is NOT 'quality of life'
+[INFO]   Fuzzy verify progress: 600 / 680
+[INFO]   REJECTED fuzzy: 'clomiphene citrate and letrozole' is NOT 'letrozole'
+[INFO]   REJECTED fuzzy: 'placebo oral tablet with calcium and clomiphene citrate' is NOT 'clomiphene citrate'
+[INFO]   Fuzzy verify progress: 610 / 680
+[INFO]   REJECTED fuzzy: 'clomiphene citrate and prednisolone' is NOT 'clomiphene citrate'
+[INFO]   REJECTED fuzzy: 'oxytocin' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'clinical, biophysical and biochemical assessment of young females with clinical hyperandrogenism' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 620 / 680
+[INFO]   REJECTED fuzzy: 'collect body fluids/tissues & med history' is NOT 'bmi'
+[INFO]   Fuzzy verify progress: 630 / 680
+[INFO]   REJECTED fuzzy: 'placebo letrozole' is NOT 'letrozole'
+[INFO]   REJECTED fuzzy: 'controlled ovarian hyperstimulation for ivf with a long agonist protocol' is NOT 'liraglutide'
+[INFO]   Fuzzy verify progress: 640 / 680
+[INFO]   REJECTED fuzzy: 'oral carnitine supplementation' is NOT 'oral contraceptives'
+[INFO]   Fuzzy verify progress: 650 / 680
+[INFO]   REJECTED fuzzy: 'urinary hcg (u-hcg)' is NOT 'hcg'
+[INFO]   REJECTED fuzzy: 'serum' is NOT 'testosterone'
+[INFO]   REJECTED fuzzy: 'oral insertion of dydrogeserone' is NOT 'oral contraceptives'
+[INFO]   REJECTED fuzzy: 'clomiphene citrate, metformin, metformin plus clomiphene citrate, gonadotropins' is NOT 'clomiphene citrate'
+[INFO]   REJECTED fuzzy: 'bicalutamide 50 mg' is NOT 'flutamide'
+[INFO]   REJECTED fuzzy: 'working to optimize wellness in tees with pcos (wow)' is NOT 'ivf'
+[INFO]   Fuzzy verify progress: 660 / 680
+[INFO]   REJECTED fuzzy: 'high intensity circuit training (hict)' is NOT 'dietary intervention'
+[INFO]   REJECTED fuzzy: 'laparoscopic argon plasma treatment of endometrioma' is NOT 'laparoscopic ovarian drilling'
+[INFO]   REJECTED fuzzy: 'laparoscopic stripping of endometrioma and suture/coagulation of the rest of ovary' is NOT 'laparoscopic ovarian drilling'
+[INFO]   REJECTED fuzzy: 'human recombined insulin' is NOT 'gonadotropins'
+[INFO]   Fuzzy verify progress: 670 / 680
+[INFO]   REJECTED fuzzy: 'liraglutide + metformin' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'metformin + clomiphene' is NOT 'metformin'
+[INFO]   REJECTED fuzzy: 'no hormone' is NOT 'gonadotropins'
+[INFO]   REJECTED fuzzy: 'electrocoagulation and suture' is NOT 'lifestyle intervention'
+[INFO]   REJECTED fuzzy: 'the absorbable hemostat and suture' is NOT 'lifestyle intervention'
+[INFO]   Fuzzy verify progress: 680 / 680
+[INFO] Fuzzy verification: 438 confirmed, 242 rejected (moved to unknowns)
+[INFO] Running LLM resolution on 723 unknown terms...
+[INFO]   LLM progress: 10 / 723
+[INFO]   LLM progress: 20 / 723
+[INFO]   LLM progress: 30 / 723
+[INFO]   LLM progress: 40 / 723
+[INFO]   LLM progress: 50 / 723
+[INFO]   LLM progress: 60 / 723
+[INFO]   LLM progress: 70 / 723
+[INFO]   LLM progress: 80 / 723
+[INFO]   LLM progress: 90 / 723
+[INFO]   LLM progress: 100 / 723
+[INFO]   LLM progress: 110 / 723
+[INFO]   LLM progress: 120 / 723
+[INFO]   LLM progress: 130 / 723
+[INFO]   LLM progress: 140 / 723
+[INFO]   LLM progress: 150 / 723
+[INFO]   LLM progress: 160 / 723
+[INFO]   LLM progress: 170 / 723
+[INFO]   LLM progress: 180 / 723
+[INFO]   LLM progress: 190 / 723
+[INFO]   LLM progress: 200 / 723
+[INFO]   LLM progress: 210 / 723
+[INFO]   LLM progress: 220 / 723
+[INFO]   LLM progress: 230 / 723
+[INFO]   LLM progress: 240 / 723
+[INFO]   LLM progress: 250 / 723
+[INFO]   LLM progress: 260 / 723
+[INFO]   LLM progress: 270 / 723
+[INFO]   LLM progress: 280 / 723
+[INFO]   LLM progress: 290 / 723
+[WARNING] Could not parse LLM response: {"match": "gnrh receptor antagonists", "confidence": 0.9}
+```
+
+*Wait, looking at the provided candidate list specifically:*
+The candidate list contains "gnrh antagonists". Elagolix is a GnRH receptor 
+[INFO]   LLM progress: 300 / 723
+[INFO]   LLM progress: 310 / 723
+[INFO]   LLM progress: 320 / 723
+Traceback (most recent call last):
+  File "C:\Users\emaza\OneDrive\Escritorio\CODEX\PRUEBA1\scripts\entity_normalizer.py", line 1156, in <module>
+    main()
+  File "C:\Users\emaza\OneDrive\Escritorio\CODEX\PRUEBA1\scripts\entity_normalizer.py", line 1130, in main
+    stats = process_terms(conn, all_terms, name_to_id, use_llm=not args.skip_llm)
+  File "C:\Users\emaza\OneDrive\Escritorio\CODEX\PRUEBA1\scripts\entity_normalizer.py", line 970, in process_terms
+    canonical, conf = resolve_by_llm(raw)
+  File "C:\Users\emaza\OneDrive\Escritorio\CODEX\PRUEBA1\scripts\entity_normalizer.py", line 566, in resolve_by_llm
+    match = data.get("match")
+AttributeError: 'list' object has no attribute 'get'

@@ -1,0 +1,7 @@
+[22:25:49] [2/3] Lanzando extraction --top-k 500 ...
+Ollama extractions: C:\Users\emaza\OneDrive\Escritorio\CODEX\PRUEBA1\data\processed\ollama_article_extractions.jsonl
+Ollama extraction report: C:\Users\emaza\OneDrive\Escritorio\CODEX\PRUEBA1\reports\ollama_extraction_report.md
+[23:10:17] [2/3] Extraction terminado. Exit code: 0
+[23:10:17] [3/3] Lanzando entity_normalizer ...
+[21:37:13] [3/3] Entity normalizer terminado. Exit code: 0
+[21:37:13] PIPELINE COMPLETO. label= extract=0 normalizer=0

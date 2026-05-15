@@ -1,0 +1,40 @@
+[INFO] Candidates to extract: 1000 (skip_extracted=True)
+[INFO] Progress: 1 / 1000  (errors so far: 0)
+[WARNING] Error on 10.1016/s2213-8587(22)00163-2: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[WARNING] Error on 10.1210/clinem/dgaa285: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[INFO] Progress: 10 / 1000  (errors so far: 2)
+[WARNING] Error on 10.1210/endrev/bnaa010: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[WARNING] Error on 10.1038/s41572-024-00511-3: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[INFO] Progress: 20 / 1000  (errors so far: 4)
+[WARNING] Error on 10.1210/endrev/bnac001: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[WARNING] Error on 10.1038/s41574-021-00517-x: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[INFO] Progress: 30 / 1000  (errors so far: 6)
+[WARNING] Error on 10.1186/s12967-021-02817-2: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[INFO] Progress: 40 / 1000  (errors so far: 7)
+[WARNING] Error on 10.1016/j.freeradbiomed.2022.05.010: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[WARNING] Error on 10.3390/genes13020302: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[INFO] Progress: 50 / 1000  (errors so far: 9)
+[WARNING] Error on 10.1186/s40168-021-01046-5: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[WARNING] Error on 10.3389/fendo.2021.667422: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[INFO] Progress: 60 / 1000  (errors so far: 11)
+[WARNING] Error on 10.1007/s43032-021-00765-2: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[INFO] Progress: 70 / 1000  (errors so far: 12)
+[WARNING] Error on 10.1093/biolre/ioab050: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[INFO] Progress: 80 / 1000  (errors so far: 13)
+[WARNING] Error on 10.1016/j.fertnstert.2020.01.027: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[INFO] Progress: 90 / 1000  (errors so far: 14)
+[INFO] Progress: 100 / 1000  (errors so far: 14)
+[INFO] Progress: 110 / 1000  (errors so far: 14)
+[WARNING] Error on 10.1093/humrep/deab272: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[WARNING] Error on 10.3389/fendo.2022.808898: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[WARNING] Error on 10.3389/fendo.2022.892125: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[WARNING] Error on 10.3390/ijerph19031336: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[INFO] Progress: 120 / 1000  (errors so far: 18)
+[WARNING] Error on 10.3390/jcm11154509: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[WARNING] Error on 10.1016/j.fertnstert.2020.08.019: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[INFO] Progress: 130 / 1000  (errors so far: 20)
+[WARNING] Error on 10.1186/s12958-020-00687-9: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+[ERROR] Too many errors (21), stopping.
+[INFO] Done. Extracted: 117  Errors: 21
+Ollama extractions: C:\Users\emaza\OneDrive\Escritorio\CODEX\PRUEBA1\data\processed\ollama_article_extractions.jsonl
+Ollama extraction report: C:\Users\emaza\OneDrive\Escritorio\CODEX\PRUEBA1\reports\ollama_extraction_report.md

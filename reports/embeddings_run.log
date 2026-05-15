@@ -1,0 +1,12 @@
+Cargando artículos desde SQLite...
+  12155 artículos encontrados
+  12113 artículos ya tienen embedding (se saltarán)
+  42 artículos pendientes de embedding
+
+  [42/42] 0.9 art/s | ETA: 0.0 min
+
+Completado en 0.8 minutos
+  Procesados:  42
+  Saltados:    12113  (ya tenian embedding)
+  Errores:     0
+  Total en ChromaDB: 12155
