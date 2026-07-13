@@ -56,8 +56,10 @@ from config import PROCESSED_DIR, REPORTS_DIR
 logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 log = logging.getLogger(__name__)
 
-OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"
-OLLAMA_MODEL = "gemma4:31b-cloud"
+from llm_client import chat_with_tools as _llm_chat_with_tools, embed as _llm_embed
+
+OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"   # kept for reference
+OLLAMA_MODEL    = "gemma4:31b-cloud"                  # kept for reference
 DB_PATH = PROCESSED_DIR / "pcos_research.db"
 CHROMA_DIR = PROCESSED_DIR / "chroma_db"
 
@@ -84,14 +86,10 @@ def tool_semantic_search(query: str, n_results: int = 5) -> str:
         )
         collection = client.get_collection("pcos_articles")
 
-        # Get embedding via Ollama
-        embed_resp = requests.post(
-            "http://localhost:11434/api/embed",
-            json={"model": "nomic-embed-text", "input": query},
-            timeout=60,
-        )
-        embed_resp.raise_for_status()
-        embedding = embed_resp.json()["embeddings"][0]
+        # Get embedding via configured backend (Ollama only; returns None otherwise)
+        embedding = _llm_embed(query)
+        if embedding is None:
+            return json.dumps({"error": "semantic_search unavailable: embed not supported by current LLM backend. Use sql_query instead."})
 
         results = collection.query(
             query_embeddings=[embedding],
@@ -654,6 +652,8 @@ def tool_graph_query(entity_name: str, max_hops: int = 2, max_results: int = 40)
     Returns typed triples: (source) --[relation]--> (target) with confidence + article.
     """
     try:
+        max_hops = int(max_hops)       # LLMs sometimes pass strings
+        max_results = int(max_results)
         conn = sqlite3.connect(str(DB_PATH), timeout=10)
         conn.row_factory = sqlite3.Row
 
@@ -1103,38 +1103,15 @@ def _call_ollama_with_tools(
     max_retries: int = 3,
 ) -> dict:
     """
-    Call Gemma with tool use enabled.
-    Returns the full response body from Ollama.
+    Call the configured LLM backend with tool use enabled.
+    Returns an Ollama-compatible response dict.
     """
-    payload = {
-        "model": OLLAMA_MODEL,
-        "messages": messages,
-        "tools": TOOL_SCHEMAS,
-        "stream": False,
-        "options": {
-            "temperature": 0.15,   # algo de creatividad para razonar hipótesis
-            "num_predict": 2000,   # respuestas largas — que piense sin cortarse
-            "num_ctx": 8192,       # contexto amplio para recordar toda la investigación
-        },
-    }
-
-    for attempt in range(1, max_retries + 1):
-        try:
-            resp = requests.post(OLLAMA_CHAT_URL, json=payload, timeout=300)
-            resp.raise_for_status()
-            return resp.json()
-        except (requests.exceptions.ReadTimeout,
-                requests.exceptions.ConnectionError,
-                requests.exceptions.HTTPError) as e:
-            wait = 2 ** attempt
-            log.warning("Ollama error (attempt %d/%d): %s. Retrying in %ds...",
-                        attempt, max_retries, type(e).__name__, wait)
-            time.sleep(wait)
-        except Exception as e:
-            log.error("Non-retryable Ollama error: %s", e)
-            raise
-
-    raise RuntimeError(f"Ollama call failed after {max_retries} retries")
+    return _llm_chat_with_tools(
+        messages,
+        TOOL_SCHEMAS,
+        temperature=0.15,
+        max_tokens=2000,
+    )
 
 
 def _execute_tool_call(tool_name: str, tool_args: dict) -> str:
@@ -1283,12 +1260,12 @@ def _load_top_signals_from_db(top_k: int = 5) -> list[dict]:
         rows = conn.execute(
             """
             SELECT is_.entity_id, is_.n_studies, is_.n_favorable,
-                   is_.n_neutral, is_.n_unfavorable,
+                   0 AS n_neutral, 0 AS n_unfavorable,
                    is_.consistency_score, is_.weighted_score,
-                   is_.signal_type, is_.anomaly_reason,
+                   'scan' AS signal_type, '' AS anomaly_reason,
                    e.canonical_name, e.entity_type
             FROM intervention_signals is_
-            JOIN entity e ON e.id = is_.entity_id
+            JOIN entity e ON e.entity_id = is_.entity_id
             WHERE is_.n_studies >= 2
             ORDER BY is_.weighted_score DESC
             LIMIT ?
@@ -1318,12 +1295,14 @@ def _load_top_signals_from_db(top_k: int = 5) -> list[dict]:
             ).fetchall()
             d["supporting_articles"] = [dict(l) for l in links]
 
-            # Get KG triples (direct)
+            # Get KG triples (direct) — columns: source_name, target_name
             triples = conn.execute(
                 """
-                SELECT source, relation_type, target, confidence
+                SELECT source_name AS source, relation_type,
+                       target_name AS target, confidence
                 FROM mechanism_links
-                WHERE lower(source) LIKE lower(?) OR lower(target) LIKE lower(?)
+                WHERE lower(source_name) LIKE lower(?)
+                   OR lower(target_name)  LIKE lower(?)
                 ORDER BY confidence DESC
                 LIMIT 8
                 """,
@@ -1713,7 +1692,7 @@ def run_research_agent(
         print("SOLICITANDO NOTA DE INVESTIGACIÓN FINAL...")
         print("="*70 + "\n")
 
-    messages.append({
+    conclusion_request = {
         "role": "user",
         "content": (
             "Excellent investigation. Now write your final research note. "
@@ -1730,9 +1709,16 @@ def run_research_agent(
             '  "research_gaps": ["gap1", "gap2", ...]\n'
             "}"
         ),
-    })
+    }
 
-    final_response = _call_ollama_with_tools(messages)
+    # Keep system + first user message + last 10 messages + conclusion request.
+    # This preserves conversation structure while fitting in smaller context windows.
+    system_msgs = [m for m in messages if m.get("role") == "system"]
+    first_user  = next((m for m in messages if m.get("role") == "user"), None)
+    recent      = messages[-10:] if len(messages) > 12 else messages[1:]
+    conclusion_messages = system_msgs + ([first_user] if first_user else []) + recent + [conclusion_request]
+
+    final_response = _call_ollama_with_tools(conclusion_messages)
     final_content = (final_response.get("message", {}).get("content") or "").strip()
 
     if verbose:

@@ -234,7 +234,7 @@ Limitations: single-center, short duration, Iranian population only.
 
 Output:
 {
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "population": "60 lean Iranian women with PCOS, aged 18-40",
   "population_diet": null,
   "population_bmi": "lean/normal-weight (BMI 19-24)",
@@ -271,7 +271,7 @@ testosterone and LH/FSH ratio, and inhibited NF-κB and TNF-α. No human partici
 
 Output:
 {
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "population": "Female Wistar rats with DHEA-induced PCOS (animal model)",
   "population_diet": null,
   "population_bmi": null,
@@ -304,7 +304,7 @@ Now extract from the following source:
 # EMPTY RECORD (schema template shown to the model)
 # ─────────────────────────────────────────────────────────────────────────────
 
-def empty_extraction_record(canonical_id: str | None = None) -> dict[str, Any]:
+def empty_extraction_record(canonical_id: "Optional[str]" = None) -> dict[str, Any]:
     return {
         "schema_version": EXTRACTION_SCHEMA_VERSION,
         "canonical_id": canonical_id,
@@ -330,10 +330,20 @@ def empty_extraction_record(canonical_id: str | None = None) -> dict[str, Any]:
 # CANONICAL PROMPT BUILDER
 # ─────────────────────────────────────────────────────────────────────────────
 
+# Prompt-side section caps (2026-07). Second truncation layer: even after the
+# fetcher stores full sections, build_source_text used to re-chop them to 2000/
+# 2500 chars before sending to Gemini — so the Results tail never reached the
+# model. Raised to let the full Results section through. Gemini 2.5 Flash-Lite
+# has a large context window; these are safety bounds, not the real limit.
+PROMPT_MAX_METHODS = 12000
+PROMPT_MAX_RESULTS = 20000
+PROMPT_MAX_DISCUSSION = 10000
+
+
 def build_source_text(
     row: dict[str, Any],
-    fulltext: dict[str, Any] | None = None,
-    max_abstract: int = 2000,
+    fulltext: "Optional[dict[str, Any]]" = None,
+    max_abstract: int = 5000,
 ) -> str:
     """
     Build the source text block from an article row dict.
@@ -377,18 +387,18 @@ def build_source_text(
         label_suffix = f" [{source_label}]" if source_label else ""
 
         if fulltext.get("methods_text"):
-            parts.append(f"Methods{label_suffix}: {fulltext['methods_text'][:2500]}")
+            parts.append(f"Methods{label_suffix}: {fulltext['methods_text'][:PROMPT_MAX_METHODS]}")
         if fulltext.get("results_text"):
-            parts.append(f"Results{label_suffix}: {fulltext['results_text'][:2000]}")
+            parts.append(f"Results{label_suffix}: {fulltext['results_text'][:PROMPT_MAX_RESULTS]}")
         if fulltext.get("discussion_text"):
-            parts.append(f"Discussion/Limitations{label_suffix}: {fulltext['discussion_text'][:1500]}")
+            parts.append(f"Discussion/Limitations{label_suffix}: {fulltext['discussion_text'][:PROMPT_MAX_DISCUSSION]}")
 
     return "\n\n".join(parts)
 
 
 def build_extraction_prompt(
     row: dict[str, Any],
-    fulltext: dict[str, Any] | None = None,
+    fulltext: "Optional[dict[str, Any]]" = None,
 ) -> str:
     """
     Full extraction prompt for Gemma.

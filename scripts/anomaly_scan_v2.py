@@ -131,10 +131,11 @@ def _load_entity_signals(conn: sqlite3.Connection) -> pd.DataFrame:
         return pd.DataFrame()
 
 
-def _load_extractions(conn: sqlite3.Connection) -> pd.DataFrame:
+def _load_extractions(conn: sqlite3.Connection, max_year: int | None = None) -> pd.DataFrame:
     """Load article_extractions (v1.1 schema where available)."""
     try:
-        return pd.read_sql_query("""
+        year_filter = f"AND a.year <= {max_year}" if max_year is not None else ""
+        return pd.read_sql_query(f"""
             SELECT
                 ae.canonical_id, ae.intervention, ae.comparator,
                 ae.effect_direction, ae.main_outcomes,
@@ -149,16 +150,18 @@ def _load_extractions(conn: sqlite3.Connection) -> pd.DataFrame:
             WHERE ae.extraction_status = 'ollama_generated'
               AND ae.intervention IS NOT NULL
               AND ae.intervention != ''
+              {year_filter}
         """, conn)
     except Exception as exc:
         log.warning("Could not load article_extractions: %s", exc)
         return pd.DataFrame()
 
 
-def _load_entity_links(conn: sqlite3.Connection) -> pd.DataFrame:
+def _load_entity_links(conn: sqlite3.Connection, max_year: int | None = None) -> pd.DataFrame:
     """Load article_entity_links with effect_direction from extractions."""
     try:
-        return pd.read_sql_query("""
+        year_filter = f"AND a.year <= {max_year}" if max_year is not None else ""
+        return pd.read_sql_query(f"""
             SELECT
                 lnk.canonical_id, lnk.entity_id, lnk.role,
                 lnk.confidence, lnk.method, lnk.raw_term,
@@ -172,6 +175,7 @@ def _load_entity_links(conn: sqlite3.Connection) -> pd.DataFrame:
               AND ae.extraction_status = 'ollama_generated'
             LEFT JOIN articles a ON a.canonical_id = lnk.canonical_id
             WHERE lnk.role = 'intervention'
+              {year_filter}
         """, conn)
     except Exception as exc:
         log.warning("Could not load entity links: %s", exc)
@@ -1251,25 +1255,8 @@ def _pubmed_search_raw(query: str, max_results: int = 5) -> dict:
 
 
 def _run_llm(prompt: str, num_predict: int = 800, temperature: float = 0.20) -> str:
-    """Llama a Ollama y devuelve el texto de respuesta. Lanza excepción si falla."""
-    import requests as _req
-    resp = _req.post(
-        OLLAMA_URL,
-        json={
-            "model": OLLAMA_MODEL,
-            "prompt": prompt,
-            "stream": False,
-            "options": {
-                "temperature": temperature,
-                "num_predict": num_predict,
-                "num_ctx": 8192,
-            },
-        },
-        timeout=180,
-    )
-    resp.raise_for_status()
-    text = resp.json().get("response", "").strip()
-    return text
+    """Llama al backend LLM configurado y devuelve el texto de respuesta."""
+    return _llm_generate(prompt, temperature=temperature, max_tokens=num_predict)
 
 
 def _execute_llm_searches(queries: list) -> str:
@@ -1337,8 +1324,7 @@ def _execute_llm_searches(queries: list) -> str:
 # LLM SYNTHESIS
 # ---------------------------------------------------------------------------
 
-OLLAMA_URL  = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "gemma4:31b-cloud"
+from llm_client import generate as _llm_generate
 
 
 def _generate_synthesis(
@@ -1697,17 +1683,25 @@ def _write_report(
     tipo9: list[dict],
     top_n: int,
     conn: sqlite3.Connection | None = None,   # para búsqueda de evidencia directa
+    max_year: int | None = None,              # temporal holdout cutoff
 ) -> Path:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-    path = REPORTS_DIR / f"anomaly_scan_v2_report_{timestamp}.md"
+    year_suffix = f"_holdout{max_year}" if max_year is not None else ""
+    path = REPORTS_DIR / f"anomaly_scan_v2_report_{timestamp}{year_suffix}.md"
+
+    cutoff_note = (
+        f"> **Temporal holdout mode**: solo articulos publicados en o antes de {max_year}.\n"
+        "> Los resultados se usan para evaluacion retrospectiva — no sobreescribe el scan completo.\n"
+    ) if max_year is not None else ""
 
     lines = [
-        "# Anomaly Scan v2 — PCOS Señales Emergentes",
+        "# Anomaly Scan v2 — PCOS Senales Emergentes",
         "",
         "> Filosofia: buscamos anomalias, no rankings de medicamentos conocidos.",
         "> El score favorece rareza + consistencia. Metformin no aparecera aqui.",
         "",
+        cutoff_note,
         f"_Senales encontradas: T1(cross-indication)={len(tipo1)} | "
         f"T2(subpoblacion)={len(tipo2)} | T3(outcome inesperado)={len(tipo3)} | "
         f"T4(hidden gems)={len(tipo4)} | T6(temporal)={len(tipo6)} | "
@@ -2069,10 +2063,11 @@ def _write_report(
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     log.info("Report written to %s", path)
 
-    # Keep a "latest" copy for quick access (overwritten each run)
-    latest = REPORTS_DIR / "anomaly_scan_v2_report_latest.md"
-    shutil.copy2(path, latest)
-    log.info("Latest copy: %s", latest)
+    # Keep a "latest" copy for quick access — skip in holdout mode to avoid overwriting full scan
+    if max_year is None:
+        latest = REPORTS_DIR / "anomaly_scan_v2_report_latest.md"
+        shutil.copy2(path, latest)
+        log.info("Latest copy: %s", latest)
 
     return path
 
@@ -2081,11 +2076,14 @@ def _write_report(
 # MAIN
 # ---------------------------------------------------------------------------
 
-def anomaly_scan_v2(min_studies: int = 2, top_n: int = 25) -> Path:
+def anomaly_scan_v2(min_studies: int = 2, top_n: int = 25, max_year: int | None = None) -> Path:
     db_path = PROCESSED_DIR / "pcos_research.db"
     if not db_path.exists():
         log.error("DB not found: %s", db_path)
         raise FileNotFoundError(db_path)
+
+    if max_year is not None:
+        log.info("Temporal holdout mode: restricting to papers published <= %d", max_year)
 
     with sqlite3.connect(db_path, timeout=60) as conn:
         conn.execute("PRAGMA journal_mode=WAL")
@@ -2104,7 +2102,7 @@ def anomaly_scan_v2(min_studies: int = 2, top_n: int = 25) -> Path:
 
         log.info("Loading data...")
         entity_signals = _load_entity_signals(conn)
-        links_df = _load_entity_links(conn)
+        links_df = _load_entity_links(conn, max_year=max_year)
 
         log.info(
             "Data loaded: %d entity signals | %d entity-article links",
@@ -2112,7 +2110,7 @@ def anomaly_scan_v2(min_studies: int = 2, top_n: int = 25) -> Path:
         )
 
         # Load raw extractions for cross-intervention analysis (Tipo 2b)
-        extractions_df = _load_extractions(conn)
+        extractions_df = _load_extractions(conn, max_year=max_year)
         log.info("  Extractions loaded: %d rows", len(extractions_df))
         n_all = len(extractions_df)
         n_fav_all = int((extractions_df["effect_direction"] == "favorable").sum()) if n_all > 0 else 0
@@ -2160,7 +2158,7 @@ def anomaly_scan_v2(min_studies: int = 2, top_n: int = 25) -> Path:
 
         report_path = _write_report(
             tipo1, tipo2, tipo2b, tipo3, tipo4, tipo6, tipo7, tipo8, tipo9,
-            top_n, conn=conn,
+            top_n, conn=conn, max_year=max_year,
         )
 
     return report_path
@@ -2178,7 +2176,12 @@ if __name__ == "__main__":
         "--top-n", type=int, default=25,
         help="Max signals to show per type in report (default: 25)"
     )
+    parser.add_argument(
+        "--max-year", type=int, default=None,
+        help="Temporal holdout cutoff: only use papers published <= this year. "
+             "Report saved separately, does NOT overwrite latest. Example: --max-year 2020"
+    )
     args = parser.parse_args()
 
-    report = anomaly_scan_v2(min_studies=args.min_studies, top_n=args.top_n)
+    report = anomaly_scan_v2(min_studies=args.min_studies, top_n=args.top_n, max_year=args.max_year)
     print(f"Anomaly scan v2 report: {report}")

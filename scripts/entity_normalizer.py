@@ -27,17 +27,13 @@ import sys
 import time
 from pathlib import Path
 
-import requests
 from rapidfuzz import fuzz, process
 
-# ---------------------------------------------------------------------------
-# Paths
-# ---------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = ROOT / "data" / "processed" / "pcos_research.db"
 
-OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"
-OLLAMA_MODEL = "gemma4:31b-cloud"  # mismo modelo que run_ollama_article_labeling.py
+sys.path.insert(0, str(ROOT / "scripts"))
+from llm_client import chat as _llm_chat
 
 logging.basicConfig(
     level=logging.INFO,
@@ -714,51 +710,25 @@ def resolve_by_dictionary(raw_term: str) -> tuple[str | None, str, float]:
 def _call_ollama(user_prompt: str,
                  system_prompt: str = "You are a biomedical entity resolver. Reply with valid JSON only.",
                  max_retries: int = 3) -> str | None:
-    """
-    Send a chat request to Ollama (cloud model gemma4:31b-cloud).
-    Retries on timeouts / transient errors with exponential backoff.
-    Returns the assistant message content (markdown fences stripped),
-    or None on failure.
-    """
-    payload = {
-        "model": OLLAMA_MODEL,
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
-        ],
-        "stream": False,
-        "options": {
-            "temperature": 0,
-            "num_predict": 220,
-            "num_ctx": 1536,
-        },
-    }
-
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user",   "content": user_prompt},
+    ]
     for attempt in range(1, max_retries + 1):
         try:
-            resp = requests.post(OLLAMA_CHAT_URL, json=payload, timeout=240)
-            resp.raise_for_status()
-            body = resp.json()
-            content = ((body.get("message") or {}).get("content") or "").strip()
+            content = _llm_chat(messages, temperature=0.0, max_tokens=220)
             if content.startswith("```"):
                 content = content.strip("`")
                 if content.startswith("json"):
                     content = content[4:]
                 content = content.strip()
             return content
-        except (requests.exceptions.ReadTimeout,
-                requests.exceptions.ConnectionError,
-                requests.exceptions.HTTPError) as e:
-            # Includes 500 server errors (Ollama cloud overloaded) — retry with backoff
-            wait = 2 ** attempt  # 2, 4, 8 seconds
-            log.warning("Ollama error (attempt %d/%d): %s. Retrying in %ds...",
-                        attempt, max_retries, e.__class__.__name__, wait)
-            time.sleep(wait)
         except Exception as e:
-            log.warning("Ollama call failed (non-retryable): %s", e)
-            return None
-
-    log.error("Ollama call gave up after %d retries", max_retries)
+            wait = 2 ** attempt
+            log.warning("LLM error (attempt %d/%d): %s. Retrying in %ds...",
+                        attempt, max_retries, e, wait)
+            time.sleep(wait)
+    log.error("LLM call gave up after %d retries", max_retries)
     return None
 
 

@@ -1,4 +1,6 @@
-﻿import argparse
+﻿from __future__ import annotations  # Python 3.9: anotaciones perezosas (permite `int | None`)
+
+import argparse
 import json
 import sqlite3
 from pathlib import Path
@@ -11,9 +13,11 @@ from config import PROCESSED_DIR, REPORTS_DIR
 from llm_support import EXTRACTION_SCHEMA_VERSION
 
 
+from llm_client import chat as _llm_chat
+
 DEFAULT_TOP_K = 10
-DEFAULT_MODEL = "gemma4:31b-cloud"
-OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"
+DEFAULT_MODEL = "gemma4:31b-cloud"   # kept for legacy logs only
+OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"   # kept for reference
 LABELER_PREFIX = "ollama_labeler"
 PROMPT_VERSION = "article-label-v2-guided"
 MAX_ABSTRACT_CHARS = 700
@@ -24,14 +28,14 @@ VALID_TIERS = {"tier_1", "tier_2", "tier_3", "tier_4"}
 VALID_LEVELS = {"high", "medium", "low"}
 
 
-def _trim_text(value: Any, limit: int) -> str | None:
+def _trim_text(value: Any, limit: int):
     if value in (None, "", "[]"):
         return None
     text = str(value).strip()
     return text if len(text) <= limit else text[:limit] + "..."
 
 
-def _load_candidates(conn: sqlite3.Connection, top_k: int, min_year: int | None = None) -> pd.DataFrame:
+def _load_candidates(conn: sqlite3.Connection, top_k: int, min_year=None) -> pd.DataFrame:
     # NOT IN (...) excluye artículos que ya tienen etiqueta exitosa.
     # Así el script es idempotente: relanzarlo no reprocesa lo ya hecho.
     # min_year permite priorizar artículos recientes (ej: RCTs de 2020+)
@@ -52,7 +56,7 @@ def _load_candidates(conn: sqlite3.Connection, top_k: int, min_year: int | None 
     return pd.read_sql_query(query, conn, params=(top_k,))
 
 
-def _label_template(canonical_id: str | None) -> dict[str, Any]:
+def _label_template(canonical_id=None) -> dict[str, Any]:
     return {
         "schema_version": EXTRACTION_SCHEMA_VERSION,
         "canonical_id": canonical_id,
@@ -66,48 +70,70 @@ def _label_template(canonical_id: str | None) -> dict[str, Any]:
     }
 
 
+FEW_SHOT_LABELING = """
+--- Example 1 ---
+Title: "Effect of metformin on insulin resistance in PCOS: a meta-analysis of 24 RCTs"
+Journal: Journal of Clinical Endocrinology & Metabolism | Year: 2021
+Abstract: "We pooled data from 24 randomized controlled trials (n=1,842) examining metformin effects on HOMA-IR in PCOS women. Random-effects meta-analysis showed significant reduction in HOMA-IR (SMD -0.82, 95% CI -1.10 to -0.54)."
+Output: {"study_type_llm": "meta-analysis", "evidence_tier_llm": "tier_1", "clinical_relevance_llm": "high", "mechanistic_relevance_llm": "medium", "utility_score_llm": 96, "llm_label_reasoning": "Quantitative meta-analysis of RCTs, direct PCOS insulin resistance endpoint."}
+
+--- Example 2 ---
+Title: "Inositol supplementation in lean PCOS women: a double-blind RCT"
+Journal: Fertility and Sterility | Year: 2020
+Abstract: "60 women (BMI 21.3±2.1) randomized to myo-inositol 4g/day vs placebo for 12 weeks. Primary outcome: ovulation rate. Secondary: testosterone, LH/FSH ratio. Significant improvement in ovulation (p=0.003) and testosterone reduction (p=0.01)."
+Output: {"study_type_llm": "rct_or_trial", "evidence_tier_llm": "tier_1", "clinical_relevance_llm": "high", "mechanistic_relevance_llm": "medium", "utility_score_llm": 91, "llm_label_reasoning": "Double-blind RCT with direct PCOS endpoints, lean subpopulation data."}
+
+--- Example 3 ---
+Title: "A case report of PCOS resolved after bariatric surgery"
+Journal: Case Reports in Endocrinology | Year: 2022
+Abstract: "We present a 28-year-old woman with PCOS who underwent sleeve gastrectomy. Six months post-op, menstrual cycles normalized and testosterone returned to reference range."
+Output: {"study_type_llm": "case_report", "evidence_tier_llm": "tier_4", "clinical_relevance_llm": "low", "mechanistic_relevance_llm": "low", "utility_score_llm": 30, "llm_label_reasoning": "Single patient, no control, anecdotal evidence only."}
+
+--- Example 4 ---
+Title: "The potential role of gut microbiome in reproductive disorders: a narrative review"
+Journal: Human Reproduction Update | Year: 2023
+Abstract: "This narrative review explores associations between gut dysbiosis and PCOS, endometriosis, and PCOS-related metabolic dysfunction. No original data."
+Output: {"study_type_llm": "review", "evidence_tier_llm": "tier_4", "clinical_relevance_llm": "medium", "mechanistic_relevance_llm": "high", "utility_score_llm": 52, "llm_label_reasoning": "Narrative review, no original data, but mechanistically rich for PCOS hypothesis generation."}
+
+--- Example 5 ---
+Title: "Silibinin ameliorates PCOS-like phenotype in rat model via NF-κB inhibition"
+Journal: Molecular and Cellular Endocrinology | Year: 2022
+Abstract: "Female Wistar rats with DHEA-induced PCOS treated with silibinin 200mg/kg. Significant reduction in testosterone, LH/FSH ratio, and ovarian cyst formation. NF-κB pathway suppressed."
+Output: {"study_type_llm": "preclinical", "evidence_tier_llm": "tier_3", "clinical_relevance_llm": "low", "mechanistic_relevance_llm": "high", "utility_score_llm": 55, "llm_label_reasoning": "Animal model only, high mechanistic value (NF-kB pathway), no human evidence."}
+
+--- Now classify this article ---
+"""
+
+
 def _build_prompt(row: pd.Series) -> str:
     template = _label_template(row.get("canonical_id"))
     abstract_text = _trim_text(row.get("abstract_text"), MAX_ABSTRACT_CHARS)
     parts = [
         f"Title: {row.get('title')}",
-        f"Journal: {row.get('journal')}",
-        f"Year: {row.get('year')}",
+        f"Journal: {row.get('journal')} | Year: {row.get('year')}",
     ]
     if abstract_text:
         parts.append(f"Abstract: {abstract_text}")
 
+    instructions = (
+        "You are a biomedical classifier for PCOS research. "
+        "Read the 5 examples above to learn the pattern, then classify the article below.\n"
+        "Rules:\n"
+        "- study_type_llm: guideline | meta-analysis | rct_or_trial | cohort | review | protocol | preclinical | case_report | other\n"
+        "- evidence_tier_llm: tier_1 (guideline/meta-analysis/robust RCT) | tier_2 (good cohort/human mechanistic) | tier_3 (small/retrospective) | tier_4 (opinion/case report/animal)\n"
+        "- clinical_relevance_llm / mechanistic_relevance_llm: high | medium | low\n"
+        "- utility_score_llm: 0-100 (how useful is this for PCOS research)\n"
+        "- llm_label_reasoning: under 18 words explaining key decision\n"
+        "Return ONLY valid JSON. No markdown, no explanation outside JSON.\n\n"
+    )
+
     return (
-        "Return JSON only. Choose the most likely study design and usefulness for PCOS research. "
-        "Allowed study_type_llm: guideline, meta-analysis, rct_or_trial, cohort, review, protocol, preclinical, case_report, other. "
-        "Allowed evidence_tier_llm: tier_1, tier_2, tier_3, tier_4. "
-        "Allowed clinical_relevance_llm and mechanistic_relevance_llm: high, medium, low. "
-        "utility_score_llm must be 0-100. Keep llm_label_reasoning under 18 words.\n\n"
-        "Study type hints:\n"
-        "- guideline: formal guideline, consensus statement, expert recommendation, practice recommendation.\n"
-        "- meta-analysis: systematic review with pooled quantitative analysis, diagnostic meta-analysis.\n"
-        "- review: narrative review or summary of existing guidelines/reviews, no original cohort/trial.\n"
-        "- rct_or_trial: interventional clinical trial, randomized or non-randomized.\n"
-        "- cohort: observational cohort, retrospective cohort, cross-sectional human study, survey study.\n"
-        "- protocol: study protocol without outcomes.\n"
-        "- preclinical: animal, cell, in vitro, or non-human mechanistic work.\n"
-        "- case_report: one patient or a very small anecdotal case series.\n"
-        "- other: methodology, database coverage, evaluation of LLMs/search systems, editorial, commentary.\n\n"
-        "Tier hints:\n"
-        "- tier_1: guideline/consensus, meta-analysis, robust clinical trial.\n"
-        "- tier_2: good cohort or strong human mechanistic study.\n"
-        "- tier_3: small or retrospective observational study, survey-heavy study.\n"
-        "- tier_4: methodology, opinion, editorial, hypothesis, case report, weak indirect evidence.\n\n"
-        "Mini examples:\n"
-        "- 'Delphi consensus on diagnostic criteria' -> guideline, tier_1.\n"
-        "- 'systematic review and diagnostic meta-analysis' -> meta-analysis, tier_1.\n"
-        "- 'retrospective cohort and survey study' -> cohort, tier_3.\n"
-        "- 'evaluation of ChatGPT/Gemini using guideline questions' -> other, tier_4.\n"
-        "- 'database coverage for living guideline surveillance' -> other, tier_4.\n\n"
-        "Schema:\n"
-        f"{json.dumps(template, ensure_ascii=False)}\n\n"
-        "Article:\n"
+        FEW_SHOT_LABELING
+        + instructions
+        + "Article:\n"
         + "\n".join(parts)
+        + "\n\nSchema:\n"
+        + json.dumps(template, ensure_ascii=False)
     )
 
 
@@ -130,23 +156,11 @@ def _strip_markdown_json(text: str) -> str:
 
 
 def _chat(model: str, system: str, user: str, timeout_s: int, num_predict: int) -> str:
-    payload = {
-        "model": model,
-        "messages": [
-            {"role": "system", "content": system},
-            {"role": "user", "content": user},
-        ],
-        "stream": False,
-        "options": {
-            "temperature": 0,
-            "num_predict": num_predict,
-            "num_ctx": 1536,
-        },
-    }
-    resp = requests.post(OLLAMA_CHAT_URL, json=payload, timeout=timeout_s)
-    resp.raise_for_status()
-    body = resp.json()
-    content = ((body.get("message") or {}).get("content") or "").strip()
+    messages = [
+        {"role": "system", "content": system},
+        {"role": "user",   "content": user},
+    ]
+    content = _llm_chat(messages, temperature=0.0, max_tokens=num_predict)
     return _strip_markdown_json(content)
 
 

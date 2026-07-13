@@ -12,9 +12,19 @@ dist/
 
 # Entorno virtual
 .venv
+.venv-mac/
 env/
 venv/
 ENV/
+
+# Backups y logs sueltos (no versionar)
+*.log
+article_fulltexts_backup_*.csv.gz
+
+# Caches / outputs de Kaggle (no versionar)
+kaggle_out/
+kaggle_kernel/
+data/kaggle_export/
 
 # Tests y cobertura
 .coverage
@@ -28,6 +38,9 @@ htmlcov/
 .vscode/
 .idea/
 .DS_Store
+
+# Secretos — NUNCA commitear las API keys
+.env
 
 # Proyecto específico
 sessions/

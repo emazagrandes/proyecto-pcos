@@ -6,13 +6,24 @@ Construir y mantener un sistema reproducible para investigar el sindrome de ovar
 2. Vigilancia de evidencia reciente (experimental/traslacional y clinica).
 3. Deteccion de senales estadisticas de beneficio inesperado en tratamientos (incluyendo tratamientos no concebidos inicialmente para SOP).
 
+## Backend LLM (actual)
+Pipeline (labeling + extraccion v1.3 + normalizer) corre contra **Gemini API** `gemini-2.5-flash-lite` (paid tier) via `llm_client.py`. `.env`: `LLM_BACKEND=gemini`, `GEMINI_MODEL=gemini-2.5-flash-lite`. `thinking` desactivado (JSON fiable). Research agent: Ollama local `gemma4:12b`. Embeddings: Ollama `nomic-embed-text`. (Scripts `run_ollama_*` son nombre legacy; ya usan Gemini.)
+
+## Estado actual (medido en BD, 2026-07-12)
+- articles **12,155** · trials **1,133** · fulltexts **4,300** (pmc 4,150 · s2 132 · abstract 18; europe_pmc 0)
+- labeling **12,155** (100%) · extracciones **7,012** (v1.3: 6,896 · v1.0: 116)
+- effect_direction: **unclear 82%** · favorable 762 · mixed 292 · neutral 137 · unfavorable 69
+- entidades **1,995** · entity_links **6,254** · mechanism_links (KG) **23,451** · señales **1,309**
+- gold_labels **115** (solo clasificación; effect/intervention/n_total sin validar)
+- Prioridad TOP acordada: expandir + de-truncar full text (Results capado a 2000 chars).
+
 ## Estructura del sistema
-- `scripts/fetch_pubmed.py`: literatura cientifica desde PubMed (E-utilities).
-- `scripts/fetch_openalex.py`: metadatos ampliados/citaciones y descubrimiento semantico.
-- `scripts/fetch_clinicaltrials.py`: ensayos clinicos desde ClinicalTrials.gov API v2.
-- `scripts/build_knowledge_base.py`: normalizacion, scoring de evidencia y resumen conciso.
-- `scripts/anomaly_scan.py`: barrido estadistico y deteccion de anomalias.
-- `scripts/refresh.py`: orquestador de actualizacion completa.
+- `scripts/fetch_pubmed.py` / `fetch_openalex.py` / `fetch_clinicaltrials.py`: ingesta (PubMed, OpenAlex, ClinicalTrials.gov).
+- `scripts/run_ollama_article_labeling.py` → `run_ollama_extraction.py` → `entity_normalizer.py`: pipeline LLM (labeling, extraccion con mechanisms, normalizacion de entidades).
+- `run_pipeline.sh`: orquestador del pipeline LLM (chunks de 500, reanudable).
+- `scripts/anomaly_scan_v2.py`: barrido estadistico y deteccion de senales (detectores T1-T9).
+- `scripts/research_agent.py`: deep-dive ReAct (Ollama local).
+- `scripts/refresh.py`: orquestador de ingesta (fetch) completa.
 - `data/raw/`: ingesta cruda JSONL.
 - `data/processed/`: tablas limpias, `pcos_research.db`, `pcos_trials.pkl`.
 - `reports/`: resumenes ejecutivos y hallazgos.
@@ -73,7 +84,7 @@ Definicion operativa de "senal":
 3. Consistencia de direccion de efecto > 60%.
 4. Penalizacion por tamano muestral pequeno y alto riesgo de sesgo.
 
-El `anomaly_scan.py` calcula:
+El `anomaly_scan_v2.py` calcula:
 - frecuencia de beneficio por intervencion,
 - score de consistencia,
 - score ponderado por tamano muestral,
@@ -128,7 +139,7 @@ Longitud objetivo: 120-220 palabras por articulo.
 - Solo ensayos:
   - `python scripts/fetch_clinicaltrials.py --query "polycystic ovary syndrome"`
 - Barrido de senales:
-  - `python scripts/anomaly_scan.py`
+  - `python scripts/anomaly_scan_v2.py --min-studies 2 --top-n 25`
 
 ## Entregables esperados tras cada refresh
 - `reports/latest_literature_brief.md`

@@ -171,9 +171,13 @@ def parse_pmc_xml(xml_text: str) -> dict[str, str | None]:
         if texts:
             result["abstract_full"].append(" ".join(texts))
 
-    # Combine and truncate each section
-    MAX_CHARS = {"methods_text": 3000, "results_text": 2000,
-                 "discussion_text": 1500, "abstract_full": 2000}
+    # Combine and truncate each section.
+    # Caps raised 2026-07: the old 2000-char results cap chopped the Results
+    # section (where effect_direction/p-values/magnitude live), which was a
+    # major driver of the 82% 'unclear' extraction rate. Kept generous but
+    # bounded so a pathological full text can't blow up the DB/prompt.
+    MAX_CHARS = {"methods_text": 12000, "results_text": 20000,
+                 "discussion_text": 10000, "abstract_full": 5000}
 
     return {
         k: " [...] ".join(v)[:MAX_CHARS.get(k, 2000)] if v else None

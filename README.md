@@ -21,23 +21,19 @@ Esto genera:
 - `reports/latest_literature_brief.md`
 - `reports/latest_trial_signals.md`
 
-## Extraccion local con Ollama
+## Pipeline LLM (Gemini)
 
-1. Instala Ollama y arranca el servicio local.
-2. Descarga un modelo, por ejemplo:
-```bash
-ollama pull qwen2.5:7b-instruct
-```
-3. Ejecuta el runner local:
-```bash
-python scripts/run_ollama_extraction.py --top-k 10 --model qwen2.5:7b-instruct
-```
-4. Si quieres probar solo el flujo sin llamar al modelo:
-```bash
-python scripts/run_ollama_extraction.py --top-k 10 --dry-run
-```
+Backend por defecto: **Gemini API** (`gemini-2.5-flash-lite`, paid tier). Config en `.env`:
+`LLM_BACKEND=gemini`, `GEMINI_API_KEY=...`, `GEMINI_MODEL=gemini-2.5-flash-lite`.
 
-La salida se guarda en la tabla `article_extractions` y en `data/processed/ollama_article_extractions.jsonl`.
+Orden: labeling → extracción → normalizer → anomaly scan. Todo automatizado con:
+```bash
+zsh run_pipeline.sh   # labeling -> re-extracción -> extracción -> normalizer (chunks, reanudable)
+python scripts/anomaly_scan_v2.py --min-studies 2 --top-n 25   # señales cross-indication
+```
+O por pasos: `run_ollama_article_labeling.py` → `run_ollama_extraction.py` → `entity_normalizer.py`.
+(Los scripts conservan el prefijo `run_ollama_*` por legacy; corren contra Gemini vía `llm_client.py`.)
+El research agent sí usa Ollama local: `LLM_BACKEND=ollama python scripts/research_agent.py`.
 
 ## Nota
 Este repositorio genera hipotesis de investigacion y no recomendaciones clinicas.

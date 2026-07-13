@@ -19,9 +19,11 @@ from llm_support import (
 )
 
 
+from llm_client import chat as _llm_chat
+
 DEFAULT_TOP_K = 200
-DEFAULT_MODEL = "gemma4:31b-cloud"
-OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"
+DEFAULT_MODEL = "gemma4:31b-cloud"   # kept for legacy logs only
+OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"   # kept for reference
 EXTRACTOR_PREFIX = "ollama"
 PROMPT_VERSION = "schema-1.3-mechanisms"
 MAX_SUMMARY_CHARS = 600
@@ -29,7 +31,7 @@ MAX_ABSTRACT_CHARS = 1400
 MAX_URL_CHARS = 200
 
 
-def _trim_text(value: Any, limit: int) -> str | None:
+def _trim_text(value: Any, limit: int):
     if value in (None, "", "[]"):
         return None
     text = str(value).strip()
@@ -115,7 +117,7 @@ def _build_prompt(row: pd.Series) -> tuple[str, bool]:
     to build_extraction_prompt so Methods/Results sections are included.
     """
     row_dict = row.to_dict()
-    fulltext: dict | None = None
+    fulltext = None
     if row_dict.get("fetch_source"):
         fulltext = {
             "fetch_source":   row_dict.pop("fetch_source", None),
@@ -152,29 +154,36 @@ def _strip_markdown_json(text: str) -> str:
     return text
 
 
+_last_call_time: float = 0.0
+_MIN_INTERVAL_S: float = 0.2  # paid tier: sin freno real (era 4.0 para free tier 15 RPM)
+
+
+def _rate_limited_chat(messages, max_tokens: int) -> str:
+    global _last_call_time
+    elapsed = time.time() - _last_call_time
+    if elapsed < _MIN_INTERVAL_S:
+        time.sleep(_MIN_INTERVAL_S - elapsed)
+    result = _llm_chat(messages, temperature=0.0, max_tokens=max_tokens)
+    _last_call_time = time.time()
+    return result
+
+
 def _call_ollama(model: str, prompt: str, timeout_s: int,
                  max_retries: int = 3, has_fulltext: bool = False) -> tuple[dict[str, Any], str]:
-    payload = {
-        "model": model,
-        "messages": [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": prompt},
-        ],
-        "stream": False,
-        "options": {
-            "temperature": 0,
-            "num_predict": 1400,   # schema v1.3 with mechanisms needs ~1000-1300 tokens
-            # With fulltext (Methods ~2500 + Results ~2000 + Discussion ~1500) we
-            # need ~16k tokens; without fulltext 8k is enough.
-            "num_ctx": 16384 if has_fulltext else 8192,
-        },
-    }
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user",   "content": prompt},
+    ]
+    max_tokens = 2000  # extra margin; 2.0-flash doesn't use thinking tokens
     for attempt in range(1, max_retries + 1):
         try:
-            resp = requests.post(OLLAMA_CHAT_URL, json=payload, timeout=timeout_s)
-            resp.raise_for_status()
-            body = resp.json()
-            content = _strip_markdown_json(((body.get("message") or {}).get("content") or "").strip())
+            content = _rate_limited_chat(messages, max_tokens)
+            content = _strip_markdown_json(content.strip())
+            # Try to extract JSON if model added surrounding text
+            if not content.startswith("{"):
+                import re as _re
+                m = _re.search(r"\{.*\}", content, _re.DOTALL)
+                content = m.group(0) if m else content
             try:
                 parsed = json.loads(content)
             except json.JSONDecodeError:
@@ -188,20 +197,25 @@ def _call_ollama(model: str, prompt: str, timeout_s: int,
                         f"JSON irreparable. Primeros 200 chars: {content[:200]}", content, 0
                     )
             return parsed, content
-        except (requests.exceptions.ReadTimeout,
-                requests.exceptions.ConnectionError) as e:
-            wait = 2 ** attempt
-            log.warning("Timeout/connection error (attempt %d/%d): %s. Retrying in %ds...",
-                        attempt, max_retries, e.__class__.__name__, wait)
-            time.sleep(wait)
         except json.JSONDecodeError as e:
             if attempt < max_retries:
-                log.warning("Empty/bad JSON from Ollama (attempt %d/%d): %s. Retrying in 5s...",
+                log.warning("Empty/bad JSON from LLM (attempt %d/%d): %s. Retrying in 5s...",
                             attempt, max_retries, str(e)[:80])
                 time.sleep(5)
             else:
                 raise
-    raise RuntimeError(f"Ollama call failed after {max_retries} retries")
+        except Exception as e:
+            err = str(e)
+            if "429" in err or "RESOURCE_EXHAUSTED" in err:
+                if attempt >= max_retries:
+                    raise
+                log.warning("Rate limit 429 — esperando 90s...")
+                time.sleep(90)
+            elif attempt < max_retries:
+                time.sleep(5)
+            else:
+                raise
+    raise RuntimeError(f"LLM call failed after {max_retries} retries")
 
 
 def _normalize_response(canonical_id: str, response: dict[str, Any]) -> dict[str, Any]:

@@ -115,10 +115,11 @@ def _parse_pmc_xml(xml_text: str) -> dict[str, str | None]:
         if texts:
             result["abstract_full"].append(" ".join(texts))
 
-    MAX_CHARS = {"methods_text": 3000, "results_text": 2000,
-                 "discussion_text": 1500, "abstract_full": 2000}
+    # Caps raised 2026-07 to match fetch_pmc_fulltext.py (see note there).
+    MAX_CHARS = {"methods_text": 12000, "results_text": 20000,
+                 "discussion_text": 10000, "abstract_full": 5000}
     return {
-        k: " [...] ".join(v)[:MAX_CHARS.get(k, 2000)] if v else None
+        k: " [...] ".join(v)[:MAX_CHARS.get(k, 5000)] if v else None
         for k, v in result.items()
     }
 
@@ -127,14 +128,59 @@ def _parse_pmc_xml(xml_text: str) -> dict[str, str | None]:
 # Source 1: Europe PMC
 # ─────────────────────────────────────────────────────────────────────────────
 
+def _europepmc_lookup_pmcid(pmid: str) -> "str | None":
+    """
+    Step 1 of Europe PMC full text retrieval: resolve a PMID to a Europe PMC
+    full-text id via the search endpoint.
+
+    Europe PMC's fullTextXML endpoint is keyed by the SOURCE id (e.g. PMCxxxxxxx
+    or MED prefix), NOT by a bare PMID — a bare PMID always 404s. The search
+    endpoint returns, per article, whether the full text is in Europe PMC
+    (inEPMC=Y) and the id to fetch it with (fullTextIdList / pmcid). This step is
+    also a coverage lever: it can discover a PMCID that PubMed's articleids never
+    carried, so an article we thought was abstract-only turns out to be OA here.
+
+    Returns a fetchable full-text id (e.g. 'PMC7399751') or None.
+    """
+    url = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
+    params = {"query": f"EXT_ID:{pmid} AND SRC:MED",
+              "format": "json", "resultType": "core"}
+    try:
+        resp = requests.get(url, params=params, timeout=30)
+        resp.raise_for_status()
+        results = resp.json().get("resultList", {}).get("result", [])
+        if not results:
+            return None
+        r0 = results[0]
+        if r0.get("inEPMC") != "Y":
+            return None
+        ft_ids = (r0.get("fullTextIdList") or {}).get("fullTextId") or []
+        if ft_ids:
+            return ft_ids[0]
+        pmcid = r0.get("pmcid")
+        return pmcid if pmcid else None
+    except (requests.RequestException, ValueError) as e:
+        log.warning("EuropePMC search error for PMID %s: %s", pmid, e)
+        return None
+
+
 def fetch_europepmc(pmid: str) -> dict[str, str | None] | None:
     """
-    Fetch full text XML from Europe PMC by PMID.
-    Europe PMC covers ~5M open-access articles, including many not in NCBI PMC.
-    API: https://www.ebi.ac.uk/europepmc/webservices/rest/{pmid}/fullTextXML
-    Returns None on network error, {"_status": "not_open_access"} if no full text.
+    Fetch full text XML from Europe PMC by PMID (two-step).
+
+    Europe PMC covers ~5M+ open-access articles, including author manuscripts and
+    many not in NCBI PMC. Retrieval is two calls:
+      1. search by PMID  -> full-text id (PMCxxxxxxx) + inEPMC flag
+      2. fetch PMC{id}/fullTextXML and parse sections
+
+    Returns parsed sections, {"_status": "not_open_access"} if no OA full text,
+    or None on network error.
     """
-    url = f"https://www.ebi.ac.uk/europepmc/webservices/rest/{pmid}/fullTextXML"
+    ft_id = _europepmc_lookup_pmcid(pmid)
+    if not ft_id:
+        return {"_status": "not_open_access"}
+
+    url = f"https://www.ebi.ac.uk/europepmc/webservices/rest/{ft_id}/fullTextXML"
     try:
         resp = requests.get(url, timeout=30)
         if resp.status_code == 404:
@@ -144,12 +190,11 @@ def fetch_europepmc(pmid: str) -> dict[str, str | None] | None:
         if "<error" in xml_text.lower() or "not found" in xml_text.lower():
             return {"_status": "not_open_access"}
         sections = _parse_pmc_xml(xml_text)
-        # Consider valid if at least methods or results found
         if any(sections.get(k) for k in ("methods_text", "results_text", "abstract_full")):
             return sections
         return {"_status": "not_open_access"}
     except requests.RequestException as e:
-        log.warning("EuropePMC error for PMID %s: %s", pmid, e)
+        log.warning("EuropePMC error for PMID %s (ft_id=%s): %s", pmid, ft_id, e)
         return None
 
 
@@ -201,7 +246,7 @@ def fetch_semanticscholar(doi: str | None, pmid: str | None) -> dict[str, str | 
         combined += abstract
 
     return {
-        "abstract_full":   combined[:2000] if combined else None,
+        "abstract_full":   combined[:5000] if combined else None,
         "methods_text":    None,  # S2 API doesn't return section text
         "results_text":    None,
         "discussion_text": None,
