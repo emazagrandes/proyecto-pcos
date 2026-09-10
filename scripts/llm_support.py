@@ -1,28 +1,12 @@
-"""
-llm_support.py
-==============
-Prompt engineering for PCOS evidence extraction with Gemma 4.
-
-Architecture:
-- SYSTEM_PROMPT:      Role + principles. Goes in the "system" turn.
-- EXTRACTION_FIELDS:  Field-by-field instructions for the user prompt.
-- FEW_SHOT_EXAMPLES:  2 complete examples (RCT + mechanistic/animal).
-                      The single biggest quality improvement for LLMs.
-- build_extraction_prompt(row):  Canonical prompt builder used by
-                      run_ollama_extraction.py.
-
-Schema version: 1.2
-"""
+"""Prompts and prompt builder for LLM-based evidence extraction. Schema version: 1.3."""
 
 import json
 from typing import Any
 
 EXTRACTION_SCHEMA_VERSION = "1.3"
 
-# ─────────────────────────────────────────────────────────────────────────────
 # SYSTEM PROMPT
 # Given to Gemma as the "system" turn — sets role, goal, and key principles.
-# ─────────────────────────────────────────────────────────────────────────────
 
 SYSTEM_PROMPT = """\
 You are an expert biomedical research analyst specializing in PCOS \
@@ -47,10 +31,8 @@ disease, not the study design.
 unless the paper reports direct clinical outcomes in humans.
 """
 
-# ─────────────────────────────────────────────────────────────────────────────
 # FIELD GUIDANCE
 # Per-field instructions. More specific = better fill rate.
-# ─────────────────────────────────────────────────────────────────────────────
 
 EXTRACTION_FIELDS: dict[str, str] = {
 
@@ -211,12 +193,10 @@ EXTRACTION_FIELDS: dict[str, str] = {
     ),
 }
 
-# ─────────────────────────────────────────────────────────────────────────────
 # FEW-SHOT EXAMPLES
 # Two complete demonstrations. This is the single biggest quality improvement.
 # Example 1: RCT with clear favorable outcome
 # Example 2: Study with mixed/unclear result to calibrate effect_direction
-# ─────────────────────────────────────────────────────────────────────────────
 
 FEW_SHOT_EXAMPLES = """
 ## Example 1 — Randomized controlled trial, favorable result
@@ -300,9 +280,7 @@ Now extract from the following source:
 """
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # EMPTY RECORD (schema template shown to the model)
-# ─────────────────────────────────────────────────────────────────────────────
 
 def empty_extraction_record(canonical_id: "Optional[str]" = None) -> dict[str, Any]:
     return {
@@ -326,9 +304,7 @@ def empty_extraction_record(canonical_id: "Optional[str]" = None) -> dict[str, A
     }
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # CANONICAL PROMPT BUILDER
-# ─────────────────────────────────────────────────────────────────────────────
 
 # Prompt-side section caps (2026-07). Second truncation layer: even after the
 # fetcher stores full sections, build_source_text used to re-chop them to 2000/

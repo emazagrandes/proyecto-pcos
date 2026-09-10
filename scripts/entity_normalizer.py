@@ -1,21 +1,4 @@
-"""
-Entity Normalizer for the PCOS Research System
-===============================================
-Unifies variant names (e.g. "metformin", "glucophage", "Metformin XR")
-into a single canonical entity so the anomaly scanner can count them
-correctly.
-
-Four layers:
-  1. Seed dictionary   -- hand-curated aliases for ~50 key PCOS entities
-  2. Fuzzy matching    -- Levenshtein distance catches typos / minor variants
-  3. LLM resolution    -- Gemma decides if two terms are the same entity
-  4. Role assignment   -- Gemma labels each entity's role in the article
-
-Usage:
-  python scripts/entity_normalizer.py                # full pipeline
-  python scripts/entity_normalizer.py --skip-llm     # layers 1-2 only (fast)
-  python scripts/entity_normalizer.py --seed-only     # layer 1 only (instant)
-"""
+"""Normalizes extracted entity names to canonical forms via seed dict, fuzzy matching, and LLM resolution."""
 
 from __future__ import annotations
 
@@ -41,17 +24,9 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-# ===================================================================
-# LAYER 1 -- SEED DICTIONARY
-# ===================================================================
-# Each entry: canonical_name -> {type, aliases}
-# The canonical_name is the standard medical/scientific term.
-# Aliases include brand names, abbreviations, common misspellings,
-# and variant formulations that should all map to the same entity.
-# -------------------------------------------------------------------
+# Layer 1: seed dictionary — canonical_name -> {type, aliases}
 
 SEED: dict[str, dict] = {
-    # ---- PHARMACOLOGICAL INTERVENTIONS ----
     "metformin": {
         "type": "intervention",
         "aliases": [
@@ -635,9 +610,7 @@ SEED: dict[str, dict] = {
     },
 }
 
-# ===================================================================
 # Pre-build a flat lookup: alias (lowercase) -> canonical_name
-# ===================================================================
 
 def _build_alias_map() -> dict[str, str]:
     """Create a flat dict: every known alias -> its canonical name."""
@@ -653,15 +626,12 @@ ALIAS_MAP: dict[str, str] = _build_alias_map()
 ALL_KNOWN_NAMES: list[str] = list(ALIAS_MAP.keys())
 
 
-# ===================================================================
 # LAYER 2 -- FUZZY MATCHING
-# ===================================================================
 # When an input string is NOT found in the alias map exactly,
 # we use rapidfuzz to find the closest known alias.
 # "score_cutoff" is the minimum similarity (0-100) to accept a match.
 # 80 is a good balance: catches "metformn" -> "metformin" (score ~93)
 # but rejects "vitamin d" -> "vitamin k" (score ~73).
-# -------------------------------------------------------------------
 
 FUZZY_CUTOFF = 80  # minimum similarity score (0-100) to accept
 
@@ -699,13 +669,10 @@ def resolve_by_dictionary(raw_term: str) -> tuple[str | None, str, float]:
     return None, "unknown", 0.0
 
 
-# ===================================================================
 # LAYER 3 -- LLM RESOLUTION (Gemma via Ollama)
-# ===================================================================
 # For terms that layers 1-2 couldn't match, we ask Gemma:
 #   "Is <unknown_term> the same entity as any of these known entities?"
 # Gemma returns JSON with its answer.
-# -------------------------------------------------------------------
 
 def _call_ollama(user_prompt: str,
                  system_prompt: str = "You are a biomedical entity resolver. Reply with valid JSON only.",
@@ -855,15 +822,12 @@ def resolve_by_llm(raw_term: str, top_candidates: list[str] | None = None) -> tu
         return None, 0.0, "parse_error", None
 
 
-# ===================================================================
 # LAYER 4 -- ROLE ASSIGNMENT
-# ===================================================================
 # For each entity found in an article, Gemma assigns its role:
 #   intervention, outcome, biomarker, comparator, or population.
 # The seed dictionary already has a default type, but the ROLE can
 # vary by context (e.g. "metformin" is usually an intervention,
 # but in a pharmacokinetics study it could be the subject).
-# -------------------------------------------------------------------
 
 VALID_ROLES = {"intervention", "outcome", "biomarker", "comparator", "population"}
 
@@ -910,9 +874,7 @@ def assign_role_by_llm(entity_name: str, context_snippet: str) -> tuple[str, flo
         return "intervention", 0.0
 
 
-# ===================================================================
 # DATABASE OPERATIONS
-# ===================================================================
 
 def init_db(conn: sqlite3.Connection) -> None:
     """Create the three entity tables if they don't exist."""
@@ -995,14 +957,11 @@ def insert_link(conn: sqlite3.Connection, canonical_id: str,
     )
 
 
-# ===================================================================
 # INTERVENTION SPLITTER (v3)
-# ===================================================================
 # Many raw_terms are combos: "metformin + clomiphene citrate",
 # "inositol + folic acid", "lifestyle versus metformin".
 # We split them into individual terms before normalizing, so each
 # component gets its own link.
-# -------------------------------------------------------------------
 
 import re as _re
 
@@ -1050,9 +1009,7 @@ def split_intervention(raw_term: str) -> list[str]:
     return cleaned if cleaned else [raw_term.strip()]
 
 
-# ===================================================================
 # EXTRACTION HELPERS
-# ===================================================================
 
 def extract_terms_from_trials(conn: sqlite3.Connection) -> list[dict]:
     """Pull intervention terms from the trials table."""
@@ -1165,9 +1122,7 @@ def is_noise(term: str) -> bool:
     return False
 
 
-# ===================================================================
 # MAIN PIPELINE
-# ===================================================================
 
 def seed_entities(conn: sqlite3.Connection) -> dict[str, int]:
     """Layer 1: Load all seed entities into the DB. Returns name->id map."""
@@ -1511,9 +1466,7 @@ def compute_signals(conn: sqlite3.Connection) -> None:
         log.info("No signals with >= 2 studies yet. Need more article_extractions.")
 
 
-# ===================================================================
 # CLI
-# ===================================================================
 
 def main() -> None:
     parser = argparse.ArgumentParser(

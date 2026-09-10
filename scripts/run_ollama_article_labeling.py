@@ -1,4 +1,4 @@
-﻿from __future__ import annotations  # Python 3.9: anotaciones perezosas (permite `int | None`)
+﻿from __future__ import annotations
 
 import argparse
 import json
@@ -16,8 +16,8 @@ from llm_support import EXTRACTION_SCHEMA_VERSION
 from llm_client import chat as _llm_chat
 
 DEFAULT_TOP_K = 10
-DEFAULT_MODEL = "gemma4:31b-cloud"   # kept for legacy logs only
-OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"   # kept for reference
+DEFAULT_MODEL = "gemma4:31b-cloud"
+OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"
 LABELER_PREFIX = "ollama_labeler"
 PROMPT_VERSION = "article-label-v2-guided"
 MAX_ABSTRACT_CHARS = 700
@@ -36,9 +36,9 @@ def _trim_text(value: Any, limit: int):
 
 
 def _load_candidates(conn: sqlite3.Connection, top_k: int, min_year=None) -> pd.DataFrame:
-    # NOT IN (...) excluye artículos que ya tienen etiqueta exitosa.
-    # Así el script es idempotente: relanzarlo no reprocesa lo ya hecho.
-    # min_year permite priorizar artículos recientes (ej: RCTs de 2020+)
+
+
+
     year_filter = f"AND year >= {min_year}" if min_year else ""
     query = f"""
         SELECT canonical_id, title, journal, year, study_type, evidence_tier, evidence_score,

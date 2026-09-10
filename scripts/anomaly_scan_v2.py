@@ -1,44 +1,4 @@
-"""
-Anomaly Scan v2 — PCOS Research System
-=======================================
-Detects FOUR types of emergent signals WITHOUT predefined hypotheses.
-
-Core philosophy: we are NOT looking for "which drugs are effective in PCOS" —
-we already know metformin and letrozole work. We are looking for:
-
-  Tipo 1 — Cross-indication signal (drug repurposing)
-    Intervention designed for ANOTHER condition that appears in PCOS studies
-    with favorable effect. Rarity-adjusted: 2 favorable in 3 studies scores
-    HIGHER than 5 favorable in 200 studies (inverse-frequency weighting).
-
-  Tipo 2 — Subpopulation effect heterogeneity
-    Same intervention, very different favorable rate across subgroups
-    (diet, BMI, ethnicity, comorbidity). Data-driven precision medicine hint.
-    Falls back to parsing raw population text when structured fields are empty.
-
-  Tipo 3 — Unexpected outcome co-occurrence
-    An outcome NOT expected in PCOS appears repeatedly for a given
-    intervention → hints at unknown mechanism or pleiotropic effect.
-
-  Tipo 4 — Hidden gems (rare but consistent)
-    Interventions appearing in very few studies (1-5) with high or perfect
-    favorable consistency. These are the "nobody has read and crossed" cases:
-    one lab found something, nobody replicated — but it's consistently
-    positive. These are the most actionable hypotheses for future research.
-
-Scoring principle across all types:
-  curiosity_score favors: high consistency, small n_studies (rarity),
-  non-mainstream interventions. The formula penalizes very large n_studies
-  via log2 to avoid metformin always dominating.
-
-Prerequisites:
-  - entity_normalizer.py must have run first
-  - article_extractions with schema_version='1.1' improves Tipo 2
-
-Usage:
-  python scripts/anomaly_scan_v2.py
-  python scripts/anomaly_scan_v2.py --min-studies 1 --top-n 30
-"""
+"""Statistical signal detection across PCOS articles — finds cross-indication drugs, subpopulation effects, unexpected outcomes, and rare consistent findings."""
 
 from __future__ import annotations
 
@@ -59,36 +19,25 @@ from config import PROCESSED_DIR, REPORTS_DIR
 logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 log = logging.getLogger(__name__)
 
-# ---------------------------------------------------------------------------
-# Known first-line PCOS drugs — Tipo 1 and Tipo 4 exclude these because
-# their effectiveness is already established; we want the unknowns.
-# ---------------------------------------------------------------------------
 PCOS_PRIMARY_DRUGS = {
-    # First-line pharmacological (consensus guidelines)
     "metformin", "letrozole", "clomiphene citrate", "spironolactone",
     "oral contraceptives", "flutamide", "finasteride",
-    # Inositols (studied in PCOS since 2012, now mainstream)
     "myo-inositol", "d-chiro-inositol", "inositol",
-    # Natural compounds now with multiple PCOS-specific RCTs and meta-analyses
-    "berberine",        # meta-analyses vs metformin since 2014
-    "curcumin",         # RCTs in PCOS since 2018, meta-analysis 2021-2023
-    "melatonin",        # RCTs oocyte quality in PCOS (N=526 RCT), meta-analysis 2025 (PMC12521052)
-    "vitamin d",        # extensive PCOS literature, correctable deficiency
-    "omega-3",          # lipid effects well documented in PCOS
-    "probiotics",       # gut-PCOS axis established (Nature Medicine 2019)
-    # ART and surgical procedures (already standard of care)
+    "berberine",
+    "curcumin",
+    "melatonin",
+    "vitamin d",
+    "omega-3",
+    "probiotics",
     "gnrh agonists", "gnrh antagonists", "gonadotropins", "hcg", "progesterone",
     "exercise", "lifestyle intervention", "dietary intervention",
     "weight loss", "acupuncture", "laparoscopic ovarian drilling",
     "ivf", "icsi", "ivm", "bariatric surgery",
-    # Fertility procedures (standard reproductive medicine)
     "frozen embryo transfer", "fresh embryo transfer",
     "letrozole combined with gonadotropins",
 }
 
-# ---------------------------------------------------------------------------
 # Rarity score helper
-# ---------------------------------------------------------------------------
 
 def _rarity_factor(n_studies: int) -> float:
     """
@@ -110,9 +59,7 @@ def _rarity_factor(n_studies: int) -> float:
 # The anomaly scan uses those fields directly — no regex fallback needed.
 
 
-# ---------------------------------------------------------------------------
 # HELPERS
-# ---------------------------------------------------------------------------
 
 def _load_entity_signals(conn: sqlite3.Connection) -> pd.DataFrame:
     """Load intervention_signals joined with entity names."""
@@ -198,9 +145,7 @@ def _parse_outcomes(raw: object) -> list[str]:
     return [text.lower().strip()] if text else []
 
 
-# ---------------------------------------------------------------------------
 # TIPO 1 — Cross-indication signal
-# ---------------------------------------------------------------------------
 
 def detect_tipo1(links_df: pd.DataFrame, min_favorable: int = 2) -> list[dict]:
     """
@@ -262,9 +207,7 @@ def detect_tipo1(links_df: pd.DataFrame, min_favorable: int = 2) -> list[dict]:
     return signals
 
 
-# ---------------------------------------------------------------------------
 # TIPO 2 — Biomarker variance by subpopulation
-# ---------------------------------------------------------------------------
 
 def detect_tipo2(links_df: pd.DataFrame, min_per_group: int = 2) -> list[dict]:
     """
@@ -343,9 +286,7 @@ def detect_tipo2(links_df: pd.DataFrame, min_per_group: int = 2) -> list[dict]:
     return signals
 
 
-# ---------------------------------------------------------------------------
 # TIPO 2b — Cross-intervention subpopulation modifier
-# ---------------------------------------------------------------------------
 
 def detect_tipo2b_cross_intervention(
     extractions_df: pd.DataFrame,
@@ -456,9 +397,7 @@ def detect_tipo2b_cross_intervention(
     return signals
 
 
-# ---------------------------------------------------------------------------
 # TIPO 3 — Unexpected outcome co-occurrence
-# ---------------------------------------------------------------------------
 
 EXPECTED_PCOS_OUTCOMES = {
     "menstrual regularity", "ovulation", "testosterone", "amh",
@@ -515,9 +454,7 @@ def detect_tipo3(links_df: pd.DataFrame, min_co_occurrence: int = 2) -> list[dic
     return signals
 
 
-# ---------------------------------------------------------------------------
 # TIPO 4 — Hidden gems: rare but consistent
-# ---------------------------------------------------------------------------
 
 def detect_tipo4_hidden_gems(
     links_df: pd.DataFrame,
@@ -600,9 +537,7 @@ def detect_tipo4_hidden_gems(
 
     signals.sort(key=lambda x: x["curiosity_score"], reverse=True)
 
-    # ----------------------------------------------------------------
     # DOI-LEVEL DEDUPLICATION
-    # ----------------------------------------------------------------
     # Problem: the entity normalizer sometimes creates multiple canonical
     # entities for the same intervention variant (e.g. "nc-fet", "mnc-fet",
     # "pc-fet" all from the same paper DOI 10.1007/s10815-025-03523-4).
@@ -633,9 +568,7 @@ def detect_tipo4_hidden_gems(
     return deduped
 
 
-# ---------------------------------------------------------------------------
 # TIPO 6 — Temporal Anomaly
-# ---------------------------------------------------------------------------
 
 def detect_tipo6_temporal(
     links_df: pd.DataFrame,
@@ -711,9 +644,7 @@ def detect_tipo6_temporal(
     return signals
 
 
-# ---------------------------------------------------------------------------
 # TIPO 7 — Contradiction Analysis
-# ---------------------------------------------------------------------------
 
 def detect_tipo7_contradictions(
     links_df: pd.DataFrame,
@@ -820,9 +751,7 @@ def detect_tipo7_contradictions(
     return signals
 
 
-# ---------------------------------------------------------------------------
 # TIPO 9 — Secondary Biomarker Movement (Pleiotropic Signals)
-# ---------------------------------------------------------------------------
 
 # Secondary biomarker categories — outcomes that are NOT primary PCOS endpoints
 # but belong to recognized clinical domains. Grouped to avoid single-keyword noise.
@@ -956,9 +885,7 @@ def detect_tipo9_secondary_biomarkers(
     return signals
 
 
-# ---------------------------------------------------------------------------
 # TIPO 8 — KG Convergence (hipótesis mecanísticas emergentes)
-# ---------------------------------------------------------------------------
 
 # Palabras clave que indican un nodo PCOS-relevante (los "C" del path A→B→C)
 # Un nodo es "endpoint PCOS" si su nombre contiene alguna de estas keywords.
@@ -1048,9 +975,7 @@ def detect_tipo8_kg_convergence(
         log.info("detect_tipo8: mechanism_links is empty — skipping")
         return []
 
-    # ----------------------------------------------------------------
     # PASO 1: Construir el grafo de aristas CONFIRMADAS
-    # ----------------------------------------------------------------
     # Agrupamos por (source_norm, relation, target_norm) y contamos
     # cuántos artículos independientes reportan ese triple.
     #
@@ -1097,9 +1022,7 @@ def detect_tipo8_kg_convergence(
     if not confirmed_edges:
         return []
 
-    # ----------------------------------------------------------------
     # PASO 2: Índice de salida por nodo fuente
-    # ----------------------------------------------------------------
     # Para encontrar caminos A→B→C eficientemente, construimos:
     #   outgoing[node_A] = lista de (rel, node_B, edge_data)
     # así, dado un nodo B de una arista A→B, podemos buscar
@@ -1109,9 +1032,7 @@ def detect_tipo8_kg_convergence(
     for (src, rel, tgt), data in confirmed_edges.items():
         outgoing[src].append((rel, tgt, data))
 
-    # ----------------------------------------------------------------
     # PASO 3: Buscar caminos de dos saltos A → B → C
-    # ----------------------------------------------------------------
     # Para cada arista confirmada A→B:
     #   Para cada arista confirmada B→C:
     #     Si C es PCOS-relevante y B no es genérico:
@@ -1188,9 +1109,7 @@ def detect_tipo8_kg_convergence(
     return paths[:top_n]
 
 
-# ---------------------------------------------------------------------------
 # NOVELTY VERIFICATION — búsqueda de evidencia directa pre-síntesis
-# ---------------------------------------------------------------------------
 
 def _pubmed_search_raw(query: str, max_results: int = 5) -> dict:
     """
@@ -1320,9 +1239,7 @@ def _execute_llm_searches(queries: list) -> str:
     return "\n".join(lines) if lines else "  (sin resultados)"
 
 
-# ---------------------------------------------------------------------------
 # LLM SYNTHESIS
-# ---------------------------------------------------------------------------
 
 from llm_client import generate as _llm_generate
 
@@ -1436,9 +1353,7 @@ def _generate_synthesis(
 
     _n_with_dir = sum(s.get("n_with_direction", 0) for s in tipo1)
 
-    # ================================================================
     # SEÑALES COMPACTAS — bloque compartido por ambos pasos
-    # ================================================================
     signals_block = f"""[T1] Cross-indication (NOT primary PCOS drugs, non-zero favorable results)
 {_fmt_t1(tipo1)}
 
@@ -1461,9 +1376,7 @@ Note: KG covers ~32% of articles — these are preliminary paths, not proven mec
 [T9] Pleiotropic signals (intervention improves secondary biomarkers in favorable studies)
 {_fmt_t9(tipo9)}"""
 
-    # ================================================================
     # PASO 1 — Gemma decide qué buscar en PubMed
-    # ================================================================
     # Gemma entiende el contexto biológico completo de cada hipótesis.
     # Es mucho mejor que nosotros formulando queries porque:
     # - Conoce los términos MeSH y sinónimos usados en la literatura
@@ -1587,9 +1500,7 @@ FIN"""
         # ---- Paso 2a: Python ejecuta las queries en PubMed ----
         pubmed_results = _execute_llm_searches(queries)
 
-        # ================================================================
         # PASO 2 — Gemma sintetiza con los resultados de búsqueda
-        # ================================================================
         prompt_paso2 = f"""Eres un investigador de PCOS con 15 años de experiencia.
 Acabas de analizar señales de un scan automático y formulaste queries para verificar
 qué hipótesis ya han sido estudiadas directamente. Ahora tienes los resultados.
@@ -1667,9 +1578,7 @@ Brutalmente honesto. ¿Cuáles son: (a) ya consenso según PubMed, (b) sesgo reg
         return fallback_text, ""
 
 
-# ---------------------------------------------------------------------------
 # REPORT WRITER
-# ---------------------------------------------------------------------------
 
 def _write_report(
     tipo1: list[dict],
@@ -2072,9 +1981,7 @@ def _write_report(
     return path
 
 
-# ---------------------------------------------------------------------------
 # MAIN
-# ---------------------------------------------------------------------------
 
 def anomaly_scan_v2(min_studies: int = 2, top_n: int = 25, max_year: int | None = None) -> Path:
     db_path = PROCESSED_DIR / "pcos_research.db"

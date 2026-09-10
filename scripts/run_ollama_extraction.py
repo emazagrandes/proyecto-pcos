@@ -22,8 +22,8 @@ from llm_support import (
 from llm_client import chat as _llm_chat
 
 DEFAULT_TOP_K = 200
-DEFAULT_MODEL = "gemma4:31b-cloud"   # kept for legacy logs only
-OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"   # kept for reference
+DEFAULT_MODEL = "gemma4:31b-cloud"
+OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"
 EXTRACTOR_PREFIX = "ollama"
 PROMPT_VERSION = "schema-1.3-mechanisms"
 MAX_SUMMARY_CHARS = 600
@@ -209,7 +209,7 @@ def _call_ollama(model: str, prompt: str, timeout_s: int,
             if "429" in err or "RESOURCE_EXHAUSTED" in err:
                 if attempt >= max_retries:
                     raise
-                log.warning("Rate limit 429 — esperando 90s...")
+                log.warning("Rate limit 429 — waiting 90s...")
                 time.sleep(90)
             elif attempt < max_retries:
                 time.sleep(5)

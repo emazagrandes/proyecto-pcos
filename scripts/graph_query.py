@@ -51,7 +51,6 @@ def multihop_query(
     for hop_num in range(1, hops + 1):
         new_frontier = set()
         for node in frontier:
-            # Outgoing: node is source
             if direction in ("outgoing", "both"):
                 rows = conn.execute("""
                     SELECT source_name, source_type, relation_type,

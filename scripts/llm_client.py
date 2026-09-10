@@ -1,48 +1,6 @@
 """
-llm_client.py — Backend-agnostic LLM interface for PCOS Research System
-========================================================================
-
-Abstracts all LLM calls so the rest of the codebase is backend-independent.
-Drop-in replacement for direct Ollama HTTP calls.
-
-BACKENDS
---------
-  LLM_BACKEND=ollama   (default) — Ollama running at localhost:11434
-  LLM_BACKEND=gemini   — Google Gemini API  (set GEMINI_API_KEY)
-  LLM_BACKEND=groq     — Groq API           (set GROQ_API_KEY)
-
-SETUP
------
-  1. Copy .env.example to .env and fill in the key for your backend.
-  2. Or export the env vars before running any script:
-       export LLM_BACKEND=gemini
-       export GEMINI_API_KEY=your_key_here
-
-DEFAULT MODELS
---------------
-  Ollama:  OLLAMA_GENERATE_MODEL  (default: gemma4:31b-cloud)
-           OLLAMA_EMBED_MODEL     (default: nomic-embed-text)
-  Gemini:  GEMINI_MODEL           (default: gemini-2.0-flash)
-  Groq:    GROQ_MODEL             (default: llama-3.3-70b-versatile)
-
-PUBLIC API
-----------
-  generate(prompt, *, temperature, max_tokens)  -> str
-      Simple text-in / text-out. Used by: anomaly_scan synthesis, labeling.
-
-  chat(messages, *, temperature, max_tokens)    -> str
-      Multi-turn conversation without tools. Used by: labeling, extraction.
-      messages = [{"role": "system"|"user"|"assistant", "content": "..."}]
-
-  chat_with_tools(messages, tool_schemas, *, temperature, max_tokens) -> dict
-      Multi-turn with function calling. Used by: research_agent.
-      Returns Ollama-compatible dict:
-        {"message": {"content": "...", "tool_calls": [...]}}
-      tool_calls element: {"function": {"name": "...", "arguments": {...}}}
-
-  embed(text)  -> list[float] | None
-      Returns embedding vector. Only available with Ollama backend.
-      Returns None on other backends (embeddings already computed).
+Backend-agnostic LLM interface. Set LLM_BACKEND=ollama|gemini|groq and the
+corresponding API key. Exposes generate(), chat(), chat_with_tools(), embed().
 """
 
 from __future__ import annotations
@@ -59,9 +17,7 @@ load_dotenv()
 
 log = logging.getLogger(__name__)
 
-# ---------------------------------------------------------------------------
 # Configuration
-# ---------------------------------------------------------------------------
 
 LLM_BACKEND: str = os.environ.get("LLM_BACKEND", "ollama").lower()
 
@@ -85,17 +41,13 @@ GROQ_MODEL      = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
 
 log.info("LLM backend: %s", LLM_BACKEND)
 
-# ---------------------------------------------------------------------------
 # Type helpers
-# ---------------------------------------------------------------------------
 
 Message  = dict[str, Any]    # {"role": ..., "content": ..., ...}
 ToolCall = dict[str, Any]    # {"function": {"name": ..., "arguments": {...}}}
 
 
-# ---------------------------------------------------------------------------
 # OLLAMA backend
-# ---------------------------------------------------------------------------
 
 def _ollama_generate(prompt: str, *, temperature: float, max_tokens: int) -> str:
     import requests
@@ -172,9 +124,7 @@ def _ollama_embed(text: str) -> list[float] | None:
         return None
 
 
-# ---------------------------------------------------------------------------
 # GEMINI backend
-# ---------------------------------------------------------------------------
 
 _gemini_client = None
 _gemini_key_idx = 0
@@ -198,7 +148,7 @@ def _rotate_gemini_key():
         raise RuntimeError("All Gemini API keys exhausted for today.")
     _gemini_key_idx = next_idx
     _gemini_client = None  # force re-init with new key
-    log.warning("Gemini daily quota exhausted — rotando a key %d/%d", _gemini_key_idx + 1, len(GEMINI_API_KEYS))
+    log.warning("Gemini daily quota exhausted — switching to key %d/%d", _gemini_key_idx + 1, len(GEMINI_API_KEYS))
 
 
 def _parse_retry_delay(err: str) -> float:
@@ -228,7 +178,7 @@ def _gemini_call_with_rotation(fn, *args, **kwargs):
                     raise RuntimeError("Daily quota exhausted and no backup key available.") from e
             else:
                 wait = _parse_retry_delay(err)
-                log.warning("Gemini rate limit (per-minute) — esperando %.0fs...", wait)
+                log.warning("Gemini rate limit (per-minute) — waiting %.0fs...", wait)
                 _time.sleep(wait)
     raise RuntimeError("All Gemini API keys and retries exhausted.")
 
@@ -438,9 +388,7 @@ def _gemini_chat_with_tools(
     }
 
 
-# ---------------------------------------------------------------------------
 # GROQ backend  (OpenAI-compatible)
-# ---------------------------------------------------------------------------
 
 _groq_client = None
 
@@ -541,9 +489,7 @@ def _groq_chat_with_tools(
     }
 
 
-# ---------------------------------------------------------------------------
 # PUBLIC API  (the only functions the rest of the code should call)
-# ---------------------------------------------------------------------------
 
 def generate(prompt: str, *, temperature: float = 0.20, max_tokens: int = 800) -> str:
     """Simple text-in / text-out generation."""
@@ -590,9 +536,7 @@ def embed(text: str) -> list[float] | None:
     return None
 
 
-# ---------------------------------------------------------------------------
 # Smoke test
-# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
     import sys

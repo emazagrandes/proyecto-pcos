@@ -1,17 +1,4 @@
-"""
-pipeline_watcher.py
-===================
-Watches for the PMC fulltext fetch to complete, then runs the full
-optimal pipeline in order:
-
-  1. fetch_pmc_fulltext      (already running — just waits)
-  2. fetch_nonpmc_fulltext   Europe PMC + Semantic Scholar
-  3. run_ollama_extraction   with fulltext + schema v1.3 (mechanisms included)
-  4. entity_normalizer
-  5. anomaly_scan_v2
-
-Run once and leave it — it will handle everything automatically.
-"""
+"""Waits for PMC fulltext fetch to finish, then runs the full pipeline through anomaly_scan_v2."""
 
 import sqlite3
 import subprocess
@@ -51,9 +38,7 @@ def run_step(name: str, cmd: list[str]) -> bool:
     return True
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Step 1: Wait for PMC fulltext fetch to complete
-# ─────────────────────────────────────────────────────────────────────────────
 
 log.info("Waiting for fetch_pmc_fulltext.py to complete...")
 while True:
@@ -66,9 +51,7 @@ while True:
     time.sleep(90)
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Step 2: Fetch non-PMC articles (Europe PMC + Semantic Scholar)
-# ─────────────────────────────────────────────────────────────────────────────
 
 run_step(
     "fetch_nonpmc_fulltext (Europe PMC cascade)",
@@ -76,9 +59,7 @@ run_step(
 )
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Step 3: Run LLM extraction with fulltext + schema v1.3 (mechanisms)
-# ─────────────────────────────────────────────────────────────────────────────
 
 # 3a. New articles (skip already extracted)
 run_step(
@@ -94,9 +75,7 @@ run_step(
 )
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Step 4: Entity normalizer (on rich extractions)
-# ─────────────────────────────────────────────────────────────────────────────
 
 run_step(
     "entity_normalizer",
@@ -104,9 +83,7 @@ run_step(
 )
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Step 5: Anomaly scan (KG already populated by extraction step)
-# ─────────────────────────────────────────────────────────────────────────────
 
 run_step(
     "anomaly_scan_v2",
@@ -114,9 +91,7 @@ run_step(
 )
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Summary
-# ─────────────────────────────────────────────────────────────────────────────
 
 log.info("=" * 60)
 log.info("PIPELINE COMPLETE")

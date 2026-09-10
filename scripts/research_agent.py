@@ -1,36 +1,4 @@
-"""
-Research Agent — PCOS Autonomous Signal Investigator
-=====================================================
-Data-driven detective mode: starts from anomaly_scan signals (real DB stats),
-not from generic entity names. The agent receives a structured anomaly object
-containing the actual numbers, the supporting canonical_ids, KG triples, and
-LLM-flagged notable_findings — then investigates from that concrete data.
-
-Tools (8 total):
-  - semantic_search(query)       : ChromaDB similarity search
-  - sql_query(sql)               : Direct SQLite read-only query
-  - web_search(query)            : DuckDuckGo search for external evidence
-  - fetch_abstract(pmid)         : Local DB + PubMed E-utilities
-  - pubmed_search(query)         : PubMed live search (beyond local DB)
-  - biorxiv_search(query)        : bioRxiv/medRxiv preprints
-  - graph_query(entity, hops)    : Multi-hop KG traversal via mechanism_links
-  - get_notable_findings(entity) : LLM-flagged surprising results for an entity
-
-Usage:
-  # Data-driven (recommended): pull top signals from intervention_signals
-  python scripts/research_agent.py --from-scan --top-k 3
-
-  # Single signal from DB by entity name (auto-builds from real stats)
-  python scripts/research_agent.py --entity "berberina"
-
-  # Free-text signal (legacy / manual)
-  python scripts/research_agent.py --signal "text describing anomaly"
-
-Prerequisites:
-  - Ollama running with gemma4:31b-cloud
-  - ChromaDB embeddings built
-  - pcos_research.db with extractions + mechanism_links + intervention_signals
-"""
+"""ReAct agent for deep-diving anomaly_scan signals. Use --from-scan, --entity, or --signal."""
 
 from __future__ import annotations
 
@@ -45,7 +13,6 @@ from typing import Any
 
 import requests
 
-# Force UTF-8 output on Windows (avoids cp1252 UnicodeEncodeError with ≥, →, etc.)
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 if hasattr(sys.stderr, "reconfigure"):
@@ -58,18 +25,15 @@ log = logging.getLogger(__name__)
 
 from llm_client import chat_with_tools as _llm_chat_with_tools, embed as _llm_embed
 
-OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"   # kept for reference
-OLLAMA_MODEL    = "gemma4:31b-cloud"                  # kept for reference
+OLLAMA_CHAT_URL = "http://localhost:11434/api/chat"
+OLLAMA_MODEL    = "gemma4:31b-cloud"
 DB_PATH = PROCESSED_DIR / "pcos_research.db"
 CHROMA_DIR = PROCESSED_DIR / "chroma_db"
 
-# Maximum agent reasoning steps to prevent infinite loops
 DEFAULT_MAX_STEPS = 12
 
 
-# ---------------------------------------------------------------------------
-# TOOL IMPLEMENTATIONS
-# ---------------------------------------------------------------------------
+# Tool implementations
 
 def tool_semantic_search(query: str, n_results: int = 5) -> str:
     """
@@ -86,7 +50,6 @@ def tool_semantic_search(query: str, n_results: int = 5) -> str:
         )
         collection = client.get_collection("pcos_articles")
 
-        # Get embedding via configured backend (Ollama only; returns None otherwise)
         embedding = _llm_embed(query)
         if embedding is None:
             return json.dumps({"error": "semantic_search unavailable: embed not supported by current LLM backend. Use sql_query instead."})
@@ -798,9 +761,7 @@ def tool_get_notable_findings(entity_name: str, max_results: int = 20) -> str:
         return json.dumps({"error": str(exc)})
 
 
-# ---------------------------------------------------------------------------
 # TOOL REGISTRY — maps tool_name -> function
-# ---------------------------------------------------------------------------
 
 TOOLS = {
     "semantic_search": tool_semantic_search,
@@ -1094,9 +1055,7 @@ TOOL_SCHEMAS = [
 ]
 
 
-# ---------------------------------------------------------------------------
 # AGENT CORE — ReAct loop with Gemma tool use
-# ---------------------------------------------------------------------------
 
 def _call_ollama_with_tools(
     messages: list[dict],
@@ -1841,9 +1800,7 @@ def _write_agent_report(result: dict, out_path: Path) -> None:
     out_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-# ---------------------------------------------------------------------------
 # MAIN
-# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
